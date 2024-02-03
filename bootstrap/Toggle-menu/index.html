@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <title>Toggle Menu</title>
+   </head>
+   <body>
+      <nav class="navigation">
+         <a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>  
+         
+         <a href="#" class="navicon logo"></a>
+         <div class="nav-text">
+            <a href="index.html" class="nav-text pld">Pledge</a>
+            <a href="index.html" class="nav-text sml">Somali</a>
+            <a href="index.html" class="nav-text un">English</a>
+         </div>
+         <div class="hero-image-text">
+            <div class="hero-image-text-innner">
+               <h1>My Dear<br>Daughter</h1>
+               <p><small>Lorem Ipsum is simply dummy <br>text of the printing and <br>typesetting industry.</small></p>
+               <a href="#" onclick="lightbox_open();">
+                  <p><i class="fa fa-play" ></i></p>
+               </a>
+            </div>
+         </div>
+         <div class="toggle">
+            <ul class="toggle__menu">
+               <li><a href="#">Homepage</a></li>
+               <li><a href="#">Pledges Gallery</a></li>
+               <li><a href="#">FGM in Somalia</a></li>
+               <li><a href="#">About us</a></li>
+            </ul>
+            <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+         </div>
+         <!-- partial -->
+      </nav>
+      <section class="foundation-details">
+         <div class="container">
+            <div class="row">
+               <p><small>Listen to their voices</small></p>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <h1>Ifrah Ahmed</h1>
+               </div>
+               <div class="col-md-4 ifrah-img">
+                  <p> <img src="images/ifrah.jpeg" alt="" class="rounded-circle"></p>
+                  <a href="#" onclick="lightbox_open();">
+                     <p class="ifrah-img-icon"><i class="fa fa-play"></i></p>
+                  </a>
+               </div>
+               <div class="col-md-4">
+                  <table style="height: 300px; margin-top: 30%;">
+                     <tbody>
+                        <tr>
+                           <td class="align-middle">"It is not easy, sharing your story with the world. But if it helps women to realise that the cutting is something we should talk about it."</td>
+                        </tr>
+                        <tr>
+                           <td class="align-baseline"><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <p class="align-middle"><small></small></p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="gallery-section">
+         <div class="container">
+            <p class="text-center">Many others are joining us to end <br>
+               FGM. Record or type your pledge <br>
+               to support the cause.
+            </p>
+            <div  class="text-center">
+               <p><img src="images/btn.png" alt=""></p>
+            </div>
+         </div>
+      </section>
+      <section class="footer-top mb-5 ">
+         <div class="container text-center">
+            <h1>Tackling Female<br>Genital Cutting <br> in Somalia</h1>
+            <p><img src="images/female.jpg" alt=""></p>
+            <p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>Lorem Ipsum has been the industry's standard dummy text ever since <br>the 1500s, when an unknown printer took a galley of type and <br>scrambled it to make a type specimen book.</p>
+            <button>LEARN MORE</button>
+         </div>
+      </section>
+      <section class="footer text-center">
+         <h1>Join us to <br> end with FGM <br> for good</h1>
+         <button>LEARN MORE</button>
+         <p>"It's not easy , sharing your with the world. But if it <br>
+            helps women to realise that this cutting is somthing <br>
+            we should talk about it."
+         </p>
+      </section>
+      <div id="light">
+         <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+         <video id="VisaChipCardVideo" width="600" controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+           
+         </video>
+      </div>
+      <div id="fade" onClick="lightbox_close();"></div>
+      <div>
+         <a href="#" onclick="lightbox_open();">Watch video</a>
+      </div>
+      <script>
+         window.document.onkeydown = function(e) {
+         if (!e) {
+           e = event;
+         }
+         if (e.keyCode == 27) {
+           lightbox_close();
+         }
+         }
+         
+         function lightbox_open() {
+         var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+         window.scrollTo(0, 0);
+         document.getElementById('light').style.display = 'block';
+         document.getElementById('fade').style.display = 'block';
+         lightBoxVideo.play();
+         }
+         
+         function lightbox_close() {
+         var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+         document.getElementById('light').style.display = 'none';
+         document.getElementById('fade').style.display = 'none';
+         lightBoxVideo.pause();
+         }
+      </script>
+      <script src="js/jquery-3.5.1.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+   </body>
+</html>

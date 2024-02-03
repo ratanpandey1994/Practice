@@ -1,0 +1,32 @@
+* {
+box-sizing: border-box !important;
+}
+body {
+color: rgb(255, 255, 255) !important;
+background: url("bg.jpg") no-repeat center fixed !important;
+background-size: cover !important;
+}
+#survey-form {
+background-color: rgb(19 19 136 / 24%) !important;
+padding: 20px !important;
+color: white !important;
+border-radius: 5px !important;
+box-shadow: 0 10px 20px -6px #000;
+}
+#title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#title, #description {
+text-align: center !important;
+text-shadow: 5px 5px 10px black !important;
+}
+label, #survey-form p {
+font-size: 20px !important;
+}
+#dropdown, #nt-sure, #option-eight {
+margin-bottom: 20px !important;
+}
+.yes {
+    display: none;
+}

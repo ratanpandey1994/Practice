@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<!-- bind() or On() method -->
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("p").on("click", function() {
+                $("<div>This is a click event</div>").appendTo("body");
+            });
+            $("p").on("dblclick", function() {
+                $("<div>This is a double click event</div>").appendTo("body");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p>click me</p>
+</body>
+
+</html>

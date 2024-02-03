@@ -1,0 +1,113 @@
+.product-wrapper {
+    box-shadow: 0 10px 20px -6px #000;
+    background: #fff;
+    margin-left: 3px;
+    margin-right: 10px;
+    font-family: "Poppins", sans-serif;
+}
+.product1-badges {
+    position: absolute;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    top: 3.5rem;
+    left: 1.5rem;
+    pointer-events: none;
+    z-index: 1;
+    padding: 13%;;
+}
+span.onsale1 {
+    background-color: #23252a;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    left: 15px;
+    top: 15px;
+    line-height: 1 !important;
+    min-height: inherit !important;
+    min-width: inherit !important;
+    padding: 5px 10px;
+    position: absolute;
+    background-color: #0b6cbc
+}
+.badge1 {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    width: auto;
+    max-height: 1.5rem;
+    padding: .375rem .75rem;
+    color: #fff;
+    background-color: var(--color-info-dark);
+}
+.product-images img{
+    padding: 5%;
+}
+.content-content-wrapper {
+    padding: 0 1.25rem 1.25rem;
+}
+.content-content-wrapper .product-title {
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 23px;
+}
+.content-content-wrapper a {
+    text-decoration: none;
+    color: #09b20f;
+}
+.content-content-wrapper a {
+    text-decoration: none;
+    color: #09b20f;
+}
+.content-content-wrapper .price {
+    font-size: 18px;
+}
+.content-content-wrapper .parameters img {
+    margin-top: -9px;
+    margin-left: -9px;
+}
+.button1 {
+    background: #07b00b !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: var(--font-primary);
+    height: 2.5rem;
+    font-size: .875rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0 .9375rem;
+    border: 1px solid;
+    color: #fff;
+    background-color: var(--color-primary);
+    border-radius: var(--size-form-radius);
+    border-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-transition: all 0.2s cubic-bezier(0.28, 0.12, 0.22, 1);
+    transition: all 0.2s cubic-bezier(0.28, 0.12, 0.22, 1);
+}

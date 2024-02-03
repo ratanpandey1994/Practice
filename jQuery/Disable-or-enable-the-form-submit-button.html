@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<!-- bind() or On() method -->
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".accept").click(function() {
+                if ($('.submitbtn').is(':disabled')) {
+                    $(".submitbtn").removeAttr('disabled');
+                } else {
+                    $(".submitbtn").attr('disabled', 'disabled');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <input type="checkbox" class="accept">I accept<br>
+        <button class="submitbtn" type="submit" disabled>Click Me</button>
+    </form>
+</body>
+
+</html>

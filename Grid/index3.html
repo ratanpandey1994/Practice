@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            width: 1000px;
+            height: 300px;
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            grid-gap: 10px;
+        }
+
+        .item1 {
+            grid-area: 1/1/1/-1;
+            background: orange;
+            padding: 1rem;
+        }
+
+        .item2,
+        .item3,
+        .item4,
+        .item5,
+        .item6,
+        .item7,
+        .item8,
+        .item9,
+        .item10 {
+            padding: .5rem;
+        }
+
+        .item2,
+        .item3,
+        .item4,
+        .item5,
+        .item6,
+        .item7,
+        .item8,
+        .item9,
+        .item10,
+        .item14,
+        .item15,
+        .item16,
+        .item17,
+        .item18 {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .item14,
+        .item15,
+        .item16,
+        .item17,
+        .item18 {
+            padding: 1rem;
+        }
+
+        .item11 {
+            grid-row: 3/8;
+            grid-column: 1/4;
+            background: orange;
+        }
+
+        .item12 {
+            grid-row: 3/5;
+            grid-column: 4/7;
+            background: orange;
+            margin-bottom: -20px;
+        }
+
+        .item13 {
+            grid-row: 6/8;
+            grid-column: 4/7;
+            background: orange;
+            margin-top: -20px;
+        }
+
+        .item14 {
+            grid-row: 3/4;
+            grid-column: 7/10;
+        }
+
+        .item15 {
+            grid-row: 4/5;
+            grid-column: 7/10;
+        }
+
+        .item16 {
+            grid-row: 5/6;
+            grid-column: 7/10;
+        }
+
+        .item17 {
+            grid-row: 6/7;
+            grid-column: 7/10;
+        }
+
+        .item18 {
+            grid-row: 7/8;
+            grid-column: 7/10;
+        }
+
+        .item19 {
+            grid-area: 8/1/9/-1;
+            background: orange;
+            padding: 1rem;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+        <div class="item item4"></div>
+        <div class="item item5"></div>
+        <div class="item item6"></div>
+        <div class="item item7"></div>
+        <div class="item item8"></div>
+        <div class="item item9"></div>
+        <div class="item item10"></div>
+        <div class="item item11"></div>
+        <div class="item item12"></div>
+        <div class="item item13"></div>
+        <div class="item item14"></div>
+        <div class="item item15"></div>
+        <div class="item item16"></div>
+        <div class="item item17"></div>
+        <div class="item item18"></div>
+        <div class="item item19"></div>
+    </div>
+</body>
+
+</html>

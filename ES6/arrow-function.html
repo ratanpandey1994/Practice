@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+
+<body>
+    <script>
+        let data = [10, 20, 30, 40, 50];
+
+        function test1() {
+            return 1;
+        }
+
+        let test2 = function () {
+            return 1;
+        }
+
+        let test3 = () => {
+            return 1
+        }
+
+        console.warn(test1());
+        console.warn(test2());
+        console.warn(test3());
+
+        // let newData = data.map(function (item) {
+        //     return item * 2;
+        // })
+
+        let newData = data.map((item) => item * 2);
+
+        console.warn(newData);
+
+        const double = (2);
+        console.log(double(5));
+
+        const arr = [1, 2, 3];
+
+        function transformToObjects(numberArray) {
+
+            // Return the result of calling `map` on the array
+            // (which is itself an array)
+            return numberArray.map(element => {
+                return { val: element };
+            });
+        }
+
+        // Call the function with the array as an argument
+        // and log its returned value
+        console.log(transformToObjects(arr));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+	<p id="demo"></p>
+	<p id="time"></p>
+
+	<script>
+		const today = new Date();
+		const weekList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		let day = weekList[today.getDay()];
+		let hour = today.getHours();
+		let minutes = today.getMinutes();
+		let second = today.getSeconds();
+		// Check whether AM or PM
+		let ampm = hour >= 12 ? 'PM' : 'AM';
+
+		document.getElementById("demo").innerHTML = "Today is : " + day + ".";
+		document.getElementById("time").innerHTML = "Current time is : " + hour + " : " + minutes + " : " + second;
+
+
+	</script>
+
+</body>
+
+</html>

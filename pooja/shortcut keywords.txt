@@ -1,0 +1,16 @@
+
+winword => for search word software in system.
+ctrl+s= save file
+ctrl+n= new page 
+ctrl+v= paste
+ctrl+c= copy
+ctrl+z= undo
+wind+d= minimise all program
+wind+e= open explorer 
+
+
+
+
+
+https://www.youtube.com/watch?v=xTLK0iHLxFs&list=PLsXdBvuJ5ox7U8HipGaQoS95fFcIhKRRS
+
