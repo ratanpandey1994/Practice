@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Write a JavaScript program to get the current date</title>
+</head>
+
+<body>
+
+	<p id="date"></p>
+	<p id="date1"></p>
+
+	<script>
+		const today = new Date();
+		let fullYear = today.getFullYear();
+		let month = today.getMonth();
+		let day = today.getDate();
+		month = month + 1;
+		month = month ? '0' + month : month;
+		day = day ? '0' + day : day;
+
+		document.getElementById("date").innerHTML = month + "-" + day + "-" + fullYear;
+		document.getElementById("date1").innerHTML = month + "/" + day + "/" + fullYear;
+	</script>
+</body>
+
+</html>
