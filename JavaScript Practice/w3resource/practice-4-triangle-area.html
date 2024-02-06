@@ -9,7 +9,8 @@
 
 <body>
 
-	<p id="area"></p>
+	<p class="area demo"></p>
+	<p class="area demo"></p>
 
 	<script>
 		let side1 = 5;
@@ -20,7 +21,7 @@
 
 		let area = Math.sqrt(s * ((s - side1) * (s - side2) * (s - side3)));
 
-		document.getElementById("area").innerHTML = "Area of Tringle : " + area;
+		document.getElementsByClassName("area")[1].innerHTML = "Area of Tringle : " + area;
 	</script>
 </body>
 
