@@ -7,23 +7,26 @@
 	<p id="time"></p>
 
 	<script>
-		const today = new Date();
-		const weekList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-		let day = weekList[today.getDay()];
-		let hours = today.getHours();
-		let minutes = today.getMinutes();
-		let second = today.getSeconds();
-		// Check whether AM or PM (Conditional (ternary) operator)
-		let ampm = hours >= 12 ? 'PM' : 'AM';
-		hours = hours % 12;
-		// To display "0" as "12"
-		hours = hours ? hours : 12;
+		setInterval(dayTime, 1000);
 
-		minutes = minutes < 10 ? '0' + minutes : minutes;
-		second = second < 10 ? '0' + second : second;
+		function dayTime() {
+			const today = new Date();
+			const weekList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+			let day = weekList[today.getDay()];
+			let hours = today.getHours();
+			let minutes = today.getMinutes();
+			let second = today.getSeconds();
+			// Check whether AM or PM (Conditional (ternary) operator)
+			let ampm = hours >= 12 ? 'PM' : 'AM';
+			hours = hours % 12;
+			// To display "0" as "12"
+			hours = hours ? hours : 12;
 
-		document.getElementById("demo").innerHTML = "Today is : " + day + ".";
-		document.getElementById("time").innerHTML = "Current time is : " + hours + " " + ampm + " : " + minutes + " : " + second;
+			minutes = minutes < 10 ? '0' + minutes : minutes;
+			second = second < 10 ? '0' + second : second;
+			document.getElementById("demo").innerHTML = "Today is : " + day + ".";
+			document.getElementById("time").innerHTML = "Current time is : " + hours + " " + ampm + " : " + minutes + " : " + second;
+		}
 
 
 	</script>

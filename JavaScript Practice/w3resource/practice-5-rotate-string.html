@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Write a JavaScript program to rotate the string 'w3resource' in the right direction. This is done by
+		periodically removing one letter from the string end and attaching it to the front.</title>
+</head>
+
+<body>
+
+	<p id='rotate'></p>
+	<script>
+		var myVar = setInterval(myFunction, 100);
+
+		var word = 'w3resource';
+		var newArray = word.split('');
+
+		function myFunction() {
+			var letter = newArray.pop();
+			var newWord = newArray.unshift(letter);
+			var theWord = newArray.join('');
+			//console.log(theWord);
+			document.getElementById('rotate').innerHTML = theWord;
+		}
+	</script>
+</body>
+
+</html>
