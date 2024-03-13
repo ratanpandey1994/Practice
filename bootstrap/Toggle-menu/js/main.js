@@ -1,1 +1,0 @@
-$(".navicon").on("click",function(a){a.preventDefault();$(this).toggleClass("navicon--active");$(".toggle").toggleClass("toggle--active")});
