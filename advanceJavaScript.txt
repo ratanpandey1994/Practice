@@ -1,5 +1,7 @@
-Watched Video - 02
-Watching - 00 - 00:00
+Watched Video - 14
+Watching - 15 - 00:00
+
+==>console.dir(document);
 
 
 1. Write a JavaScript program to display the current day and time in the following format.  
