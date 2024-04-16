@@ -17,3 +17,7 @@ mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
 
 4. Write a JavaScript program to find the area of a triangle where three sides are 5, 6, 7.  
 
+button.owl-next.active {
+    background: #0a56d0;
+    color: #fff;
+}
