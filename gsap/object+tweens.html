@@ -10,6 +10,15 @@
             background-color: black;
             color: white;
         }
+
+        .freds {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .freds img {
+            width: 100px;
+        }
     </style>
 </head>
 
@@ -17,9 +26,13 @@
     <!-- <h1>This is a Heading</h1>
     <img src="https://assets.codepen.io/32887/fred.svg" alt=""> -->
     <div class="green">
-        <img src="https://assets.codepen.io/32887/fred.svg" alt="">
+
     </div>
-    <div class="pink">
+    <div class="freds">
+        <img src="https://assets.codepen.io/32887/fred-pink.svg" alt="">
+        <img src="https://assets.codepen.io/32887/fred-orange.svg" alt="">
+        <img src="https://assets.codepen.io/32887/fred-red.svg" alt="">
+        <img src="https://assets.codepen.io/32887/fred-blue.svg" alt="">
         <img src="https://assets.codepen.io/32887/fred.svg" alt="">
     </div>
 
@@ -33,8 +46,16 @@
         //gsap.to('.green', { duration: 2, x: 600, repeat: 1, yoyo: true, ease: "bounce" });
         //gsap.to('.green', { duration: 2, x: 600, repeat: 1, yoyo: true, ease: "bounce-inOut" });
         // gsap.to('.green', { duration: 2, x: 600, ease: "elastic" });
-        gsap.to('.green', { duration: 2, x: 600, ease: "back(6)" });
-        gsap.to('.pink', { duration: 2, x: 600, delay: 2, repeat: -1, ease: "linear" })
+        //gsap.to('.green', { duration: 2, x: 600, ease: "back(6)" });
+        //gsap.to('.pink', { duration: 2, x: 600, delay: 2, repeat: -1, ease: "linear" })
+        gsap.to(".freds img", {
+            y: -100, stagger: {
+                //each: 0.2,
+                amount: 0.2,
+                //from: "center",
+                from: "edges",
+            }
+        });
     </script>
 </body>
 
