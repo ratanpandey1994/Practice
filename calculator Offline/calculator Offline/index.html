@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by swathi</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Courgette|Pacifico:400,700" rel="stylesheet">
+<title>Currency Converter</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="converter-form">
+    <form action="#" method="post">
+		<div class="form-header">
+			<h2>Currency Converter</h2>
+		</div>
+        <div class="form-group">
+			<label>Amount</label>
+        	<input type="text" class="form-control" name="amount" required="required" placeholder="Amount" id="amount" oninput="calculate()" >
+        </div>
+		<div class="row">
+			<div class="col-5">
+				<div class="form-group">
+					<label>To</label>
+					<select id="selectList1" class="form-control" onChange="calculate()">
+					  <option value="ADA">ADA </option>
+					  <option value="ROCKET"> ROCKET</option>
+				   </select>
+					
+				</div>
+			</div>
+			<div class="col-2">
+				<label>&nbsp;</label>
+				<button type="button" class="btn btn-default" style="min-width: 70px;" onclick="swap(),calculate()">
+					<span class="fa fa-exchange fa-lg" style="color: white" data-toggle="popover" data-container="body" data-html="true" data-title="Security Code"></span>
+				</button>
+			</div>
+			<div class="col-5">
+				<div class="form-group">
+					<label>To</label>
+					<select id="selectList2"  class="form-control" onChange="calculate()">
+					  <option value="ROCKET">ROCKET </option>
+					  <option value="ADA"> ADA</option>
+				   </select>
+				</div>
+			</div>
+		</div>
+		<br>
+		<h4 id="finalamount" align="center"></h4>
+		<br>
+<!--
+		<div class="form-group">
+			<button type="button" class="btn btn-primary btn-block btn-lg" onclick="calculate()">Convert</button>
+		</div>	
+-->
+    </form>
+</div>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
