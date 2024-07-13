@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter ADA value" id="myInput">
+    <button type="button" onclick="getInputValue();">Get Value</button>
+    <p id="demo"></p>
+
+
+    <input type="text" placeholder="Enter CADA value" id="myInput1">
+    <button type="button" onclick="getInputValue1();">Get Value</button>
+    <p id="demo1"></p>
+    <script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("myInput").value;
+            let currency = 4*inputVal;
+            
+            // Displaying the value
+            document.getElementById("demo").innerHTML = currency + '$CADA';
+        }
+
+        function getInputValue1(){
+            // Selecting the input element and get its value 
+            var inputVal1 = document.getElementById("myInput1").value;
+            let currency1 = 0.025*inputVal;
+            
+            // Displaying the value
+            document.getElementById("demo1").innerHTML = currency1 + '$ADA';
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Interview</title>
+</head>
+<p id="demo"></p>
+
+<body>
+    <script>
+        // 1. Given a string, reverse each word in the sentence?
+        var str = "saare jahan se achha hindustaan humara";
+        var savedStr = str.split(" ").map(function (word) {
+            return word.split("").reverse().join("");
+        });
+        //console.log(savedStr.join(" "));
+        document.getElementById("demo").innerHTML = savedStr.join(" ");
+
+        // 2. How to check if an object is an Array or not? Provide some code.
+        //
+    </script>
+</body>
+
+</html>
