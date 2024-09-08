@@ -68,8 +68,94 @@
 // Based on the value of its right operand.
 // The simple assignment operator is equal (=).
 
+// var x = 5;
+// var y = 5;
 
+// console.log("Is both x and y are equal or not" + x === y);
+// console.log(x === y);
+// //or
+// console.log(`Is both x and y are equal or not : ${x === y}`);
 
+// Arithmetic operators
+// An arithmetic operator takes numerical values
+// (either literals or variables) as their operands and returns a single numerical value.
+
+// console.log(3 + 3);
+// console.log(10 - 5);
+// console.log(20 / 5);
+// console.log(5 * 6);
+
+// console.log("Reminder operator " + 81 % 8);
+
+// The modulus operator (%) returns the division remainder
+
+// 😄Increament and Decrement operator
+// Operator: x++ or x-- or --x
+// If used postfix, with operator after operand (for example, x++)
+// The increment operator increaments and returns the value before increamenting.
+
+// var num = 15;
+// var newNum = num++ + 5;
+// console.log(num);
+// console.log(newNum);
+
+// If used prefix, with operator before operand (for example, ++x),
+// The increment operator increaments and returns the value after increamenting.
+
+// var num = 15;
+// var newNum = ++num + 5;
+// console.log(num);
+// console.log(newNum);
+
+// 3️⃣ Comparison operators
+// A comparison operator compares its operands and
+// Return a logical value based on whether the comparison is true.
+
+var a = 30;
+var b = 10;
+
+// Equal (==)
+// console.log(a == b);
+
+// Not equal(!=)
+// console.log(a != b);
+
+// Greater than (>)
+// console.log(a > b);
+
+// Greater than or equal (>=)
+// console.log(a >= b);
+
+// Less than (<)
+// console.log(a < b);
+
+// Less than or equal (<=)
+// console.log(a <= b);
+
+// 4️⃣ Logical operators
+// Logical operators are typically used with Boolean (logical) values;
+// When they are, they return a Boolean value.
+
+var a = 30;
+var b = -20;
+
+// Logical AND (&&)
+// The logical AND (&&) operator (logical conjunction) for a set of
+// operands is true if and only if all of its operands are true.
+
+// console.log(a > b && b > 0);
+
+// Logical OR (||)
+// The logical OR (||) operator (logical disjunction) for a set of
+// operands is true if and only if one or more of its operands is true.
+
+// console.log(a > b || b > 0);
+
+// Logical NOT (!)
+// The logical NOT (!) operator (logical complement, negation)
+// takes true to falsity and vice versa.
+
+console.log(!false);
 
 
 
