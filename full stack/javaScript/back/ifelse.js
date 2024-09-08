@@ -1,0 +1,1 @@
+console.log("Ice Cream is Blue Lagoon");

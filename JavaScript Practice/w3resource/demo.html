@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time</title>
+</head>
+
+<body>
+
+    <p class="date"></p>
+    <p class="currntDate"></p>
+
+    <script>
+        const today = new Date();
+        const weekList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Fryday", "Saturday"];
+        let day = weekList[today.getDay()];
+        document.getElementsByClassName('date')[0].innerHTML = "Today is :" + day;
+    </script>
+
+</body>
+
+</html>

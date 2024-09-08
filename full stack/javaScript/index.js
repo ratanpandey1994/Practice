@@ -1,42 +1,80 @@
-/* Basic JavaScript */
+/**** Value and variables in JavaScript  ****/
+// var myName = 'Ratan Pandey';
+// var myAge = 26;
+// console.log(myAge);
 
-// let x = 10;
-// let y = 'Ratan';
-// let z = true;
-// console.log(x);
-// console.log(typeof x);
-// console.log(y);
-// console.log(typeof y);
-// console.log(z);
-// console.log(typeof z);
-// console.log(x + " is the value of " + y);
+// Naming practice
+// var _myName = "Ratan"; // Valid
+// var 1myName = "Pandey"; // Not Valid
+// var _1my__Name = "Developer"; // Valid
+// var $myName = "Ratan Pandey"; // Valid
+// var _myName% = "Ratan Pandey Developer"; // Not Valid
 
-// let name = "Ratan";
-// let surname = "Pandey";
-// console.log(`Hey, My name is ${name} ${surname}`);
 
-/* Type Conversion and String method */
+/**** Data Type in JavaScript  ****/
+//var myName = "Ratan Pandey";
 
-// let a = 56;
-// a = a.toString();
-// console.log(a);
-// console.log(typeof String(a));
+//var myAge = 31;
 
-/* String method */
-let s = "My name is Ratan";
-// console.log(s[5]);
-// console.log(s.indexOf("n"));
-// console.log(s.lastIndexOf("n"));
-// console.log(s.endsWith("is"));
-// console.log(s.includes("is"));
-// console.log(s.substring(0, 4)); 
-// console.log(s.slice(0, 4));
-// console.log(s.split(" "));
-// console.log(s.replace("is", "was"));
-// console.log(s.length);
-// console.log(s.toLowerCase());
-// console.log(s.toUpperCase());
-// console.log(s.substr(3, 4));
+// var iAmRatan = true;
 
-let heading = document.getElementById("myHeading");
-heading.innerText = s;
+// console.log(iAmRatan);
+
+// typeof operator
+// console.log(typeof (iAmRatan));
+
+
+// DataType Practice
+// console.log(10 + "20"); // 1020
+// console.log(9 - "4"); // 5, 1st JavaScript  Bug
+// console.log("Java " + "Script"); // Java Script
+// console.log(" " + " "); //
+// console.log(" " + 0); // 0
+// console.log("Ratan" + "Pandey"); // output = NaN (Not a number)
+// console.log(true + true); // 2
+// console.log(true + false); // 1
+// console.log(false + true); // 1
+// console.log(false - true); // -1
+
+// Difference between null vs undefined?
+
+// var iAmUseLess = null;
+// console.log(iAmUseLess);
+// console.log(typeof (iAmUseLess));
+// 2nd JavaScript bug
+
+// var iAmStandBy;
+// console.log(iAmStandBy);
+// console.log(typeof (iAmStandBy));
+
+
+// What is NaN?
+// var myPhoneNumber = 9876543210;
+// var myName = "Ratan Pandey";
+
+// console.log(isNaN(myPhoneNumber));
+// console.log(isNaN(myName));
+
+// NaN practice
+
+// console.log(NaN === NaN);
+// console.log(Number.NaN === NaN);
+// console.log(isNaN(NaN));
+// console.log(isNaN(Number.NaN));
+// console.log(Number.isNaN(NaN));
+
+// Assignment operators
+// An assignment operator assigns a value to its left operand
+// Based on the value of its right operand.
+// The simple assignment operator is equal (=).
+
+
+
+
+
+
+
+
+
+
+

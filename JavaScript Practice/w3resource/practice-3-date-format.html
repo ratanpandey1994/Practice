@@ -18,8 +18,8 @@
 		let month = today.getMonth();
 		let day = today.getDate();
 		month = month + 1;
-		month = month ? '0' + month : month;
-		day = day ? '0' + day : day;
+		month = month < 10 ? '0' + month : month;
+		day = day < 10 ? '0' + day : day;
 
 		document.getElementById("date").innerHTML = month + "-" + day + "-" + fullYear;
 		document.getElementById("date1").innerHTML = month + "/" + day + "/" + fullYear;
