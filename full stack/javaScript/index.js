@@ -155,7 +155,39 @@ var b = -20;
 // The logical NOT (!) operator (logical complement, negation)
 // takes true to falsity and vice versa.
 
-console.log(!false);
+// console.log(!false);
+
+// 5️⃣ String Concatenation(Operators)
+// The Concatenation operators (+) concatenates two string values together, returning another string that is the union of the two operand strings
+
+//console.log("Ratan" + " Pandey");
+
+
+// What will be the output of 3**3(Exponentiation operator)?
+// console.log(3 ** 3); // 3*3*3
+// console.log(10 ** -1); // 1/10
+
+// What will be the output, when we add a number and a string?
+// console.log(5 + "Ratan");
+// console.log(5 - "Ratan");
+
+// Write a program to swap two numbers?
+// var a = 5;
+// var b = 10;
+
+// var c = b // c=10
+// b = a // b=5
+// a = c;
+
+// console.log("The value of a is " + a);
+// console.log("The value of b is " + b);
+
+// Write a program to swap two numbers without using third variable?
+
+
+
+
+
 
 
 

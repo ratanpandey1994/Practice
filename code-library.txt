@@ -1,0 +1,2375 @@
+/**  Copy text on click **/
+function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  
+  // Avoid scrolling to bottom
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.position = "fixed";
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Fallback: Copying text command was ' + msg);
+  } catch (err) {
+    console.error('Fallback: Oops, unable to copy', err);
+  }
+
+  document.body.removeChild(textArea);
+}
+
+jQuery('.amazon-code').click(function() {
+  copyTextToClipboard($(this).text())
+})
+
+
+/** Listing with css 123 **/
+https://www.w3schools.com/css/tryit.asp?filename=trycss_counters1
+
+/** Scroll Particular section on click (https://codepen.io/karencho/pen/rNybaR) **/
+
+$(document).ready(function() {
+var sec = $("#ourProducts").position();
+$('.product-slider .owl-dots button').click(function() {
+    $('html, body').animate({
+      scrollTop: sec.top
+    }, 1000);
+    return false;
+
+  });
+});
+
+/** Acf slider 3 column in on item **\
+<?php if( have_rows('our_products') ): ?>
+			<ul id="product-slider" class="product-slider owl-carousel">
+			    <?php $count = 0; while( have_rows('our_products') ) : the_row(); ?>
+			    <?php if($count%3 === 0){ ?>
+				<li>
+				    <?php } ?>
+					<div class="item item-<?php echo $count; ?>">
+						<figure>
+							<a href="#"><img src="<?php echo get_sub_field('image'); ?>" alt="<?php echo get_sub_field('title'); ?>" /></a>						
+						</figure>
+						<div class="product-details">
+							<h2><a href="#"><?php echo get_sub_field('title'); ?></a></h2>
+							<?php echo get_sub_field('content'); ?>
+							<a href="<?php echo get_sub_field('link'); ?>" class="btn btn-flip"><?php echo get_sub_field('button'); ?></a>
+						</div>
+					</div>
+					<?php if( $count % 3 === 2){ ?>
+				</li>
+				<?php } ?>
+				<?php $count++; endwhile; ?>
+			</ul>
+			<?php endif; ?>
+
+/**Added product categories with image and description
+<?php
+        $orderby = 'name';
+        $order = 'asc';
+        $hide_empty = false ;
+        
+        $cat_args = array(
+            'orderby'    => $orderby,
+            'order'      => $order,
+            'hide_empty' => $hide_empty,
+            'number'        => 6
+        );
+         
+        $product_categories = get_terms( 'product_cat', $cat_args );
+        
+        //echo "<pre>";print_r($product_categories);
+        
+        if( !empty($product_categories) ){
+        ?>
+         
+        <ul class="gift-cat d-flex list-none mr0 pd0">
+            <?php 
+            foreach ($product_categories as $key => $category) {
+                // get the thumbnail id using the queried category term_id
+                    $thumbnail_id = get_term_meta( $category->term_id, 'thumbnail_id', true ); 
+                
+                    // get the image URL
+                    $image = wp_get_attachment_url( $thumbnail_id ); 
+        ?>
+         
+        <li class="text-center">
+                <a class="innerWrapper bg-light" href="<?php echo get_term_link($category); ?>" >
+                    <figure>
+                        <img src="<?php echo  $image; ?>">
+                    </figure>
+                    <div class="info">
+                        <h3><?php echo $category->name; ?></h3>
+                        <p><?php echo $category->description; ?></p>
+                    </div>
+                </a>
+            </li>
+          <?php   } ?>
+        </ul>
+    
+    <?php  } ?>
+
+
+
+Add class when touch on top
+var stickyTop = $('.tabs').offset().top - $('.banner-section').height()+ 90;
+		   $(window).on( 'scroll', function(){
+			if ($(window).scrollTop() >= stickyTop) {
+				$('.tabs').addClass('hastouch');
+			} else {
+				$('.tabs').removeClass('hastouch');
+			}
+	 });
+
+Add a ACF Field Label
+<?php $field = get_field_object('corporate_owner'); ?><?php echo $field['label']; ?>
+
+Replace Path image path
+jQuery('img').each(function () {
+var curSrc = jQuery(this).attr('src');
+  /* En */
+  if ( curSrc === 'https://www.wasl1.ae/sites/default/files/introduction-1.jpeg' ) {
+      jQuery(this).attr('src', 'https://www.wasl1.ae/sites/default/files/1-Residences/image-1.jpg');
+  }
+}
+
+// Post type Attoeneys - print post vise category //
+
+<?php $at=1;
+						$args = array(
+						               'post_type' => 'attorney',
+						               'post_status' => 'publish', 
+						               'posts_per_page'=> -1,
+						               'tax_query' => array(
+						                                    array(
+						                                           'taxonomy' => 'cat-attorney',
+                                                                    'field'    => 'slug',
+                                                                    'terms'    => array('management')
+						                                           
+						                                        )
+						                   )
+						               ); 
+						$the_query = new WP_Query( $args );
+						while ( $the_query->have_posts() ) : $the_query->the_post();
+					?>
+                 <div class="wpv-grid grid-1-5  wpv-first-level unextended animation-fade-in animated-active topl_<?php echo $at; ?>">
+                     <div class="team-member">
+                          <div class="thumbnail"> 
+                               <a href="<?php the_permalink(); ?>" ><?php if ( has_post_thumbnail() ) { ?> <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title();?>"><?php } else { ?> <img src="https://houranipartners.com/wp-content/uploads/2023/03/Hourani-placeholder.jpg" alt="<?php the_title();?>" /> <?php } ?> </a> 
+                          </div>
+                          <div class="team-member-info">
+                            <h3> <a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a> </h3>
+                            <h5 class="regular-title-wrapper team-member-position"> <?php the_field('position'); ?> <br><?php the_field('location'); ?></h5>
+                            
+                            <?php if( get_field('email') ){ ?>
+                            <div class="email"><a href="mailto:<?php the_field('email'); ?>" ><?php the_field('email'); ?></a></div>
+                            <?php } ?>
+                            
+                            <?php if( get_field('phone') ){ ?>
+                            <div class="team-member-phone">
+                               <a href="tel:+<?php the_field('phone'); ?>" >Tel:<?php the_field('phone'); ?></a>
+                            </div>
+                            <?php } ?>
+                            
+                          </div>
+                          <div class="team-member-bio"> 
+                             <p><?php the_field('biography'); ?></p>
+                             <p><a href="<?php the_permalink(); ?>">Read full bio →</a> </p>
+                          </div>
+                          
+                      </div>
+                 </div>                 
+                 <?php $at++; endwhile; wp_reset_postdata(); ?>
+
+// Category Taxonomy print
+
+<?php if(is_category()){ 
+$hCatId = get_queried_object_id();
+$taxTxt = 'category_'.$hCatId;
+$bannerImg = get_field('banner', $taxTxt);
+?>
+						    
+<div class="catBanner page-header-content categoryTitle" style="background-image: url('<?php echo $bannerImg; ?>')">
+	<h1><?php single_cat_title(); ?></h1>
+</div>
+						
+<?php	} ?>							
+
+
+// Related post //
+
+<?php
+        $related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 4, 'post__not_in' => array($post->ID) ) );
+        if( $related ) {
+        ?>
+        <div class="heading">
+            <h2>Related Post</h2>
+        </div>
+        
+         <div class="row postWrap"> 
+          <?php
+        foreach( $related as $post ) {
+        setup_postdata($post); ?>
+            <div class="post">
+                <div class="postInner">
+                <figure>
+                    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                </figure>
+                <h3><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+                <a href="<?php the_permalink() ?>" class="btn">Read More</a>
+                </div>
+            </div>
+            <?php } ?>
+        </div>   
+        <?php } 
+        wp_reset_postdata(); ?>
+
+
+// On click display block
+<script>
+	$(document).ready(function(){			
+       setTimeout(function() {
+       $('#tgd-popup').fadeIn(300);
+       }, 5000);
+       $('.close-welcome-popup').on('click', function(){
+           $('#tgd-popup').fadeOut(300);
+       });
+    });
+</script>
+
+// For Add a category list with link and acf texonomy field
+<section class="category-list">
+		<?php 
+		       $allCategories = get_terms('category');
+			   //echo "<pre>";print_r($categories);
+			   foreach($allCategories as $cat){
+				    $catImage = get_field('category_image','category_'.$cat->term_id);
+				?>
+				<ul>
+					<li>
+						<a href="<?php echo get_category_link($cat->term_id); ?>">
+							<img src="<?php echo $catImage; ?>">
+							<h2><?php echo $cat->name; ?></h2>
+						</a>
+					</li>
+			   </ul>
+				<?php
+
+			   }
+		?>
+	</section>
+
+
+DIVI theme mobile sub menu
+(function($)
+ { 
+	function setup_collapsible_submenus() {   
+	var FirstLevel = $('.et_mobile_menu .menu-item-has-children > a');
+	FirstLevel.off('click').click(function() {
+	$(this).attr('href', '#');  
+	$(this).parent().children().children().toggleClass('reveal-items');
+	$(this).toggleClass('icon-switch');
+	});
+	
+	}     
+	$(window).load(function() {
+	setTimeout(function() {
+	setup_collapsible_submenus();
+	}, 980);
+	});
+	  
+})(jQuery);
+
+/**** Mobile Menu ****/
+
+header .et_mobile_menu .menu-item > a {
+    position: relative;
+}
+header .et_mobile_menu .menu-item-has-children > a:after {
+   font-family: 'ETmodules';
+   content: "\33";
+   font-weight: normal;
+   position: absolute;
+   font-size: 16px;
+   top: 13px;
+   right: 15px;
+}
+header .et_mobile_menu .menu-item-has-children > .icon-switch:after{
+   content: "\32";
+}
+header .et_mobile_menu li ul.sub-menu li {
+   display: none;
+}
+header .et_mobile_menu li ul.sub-menu li.reveal-items {
+   display: block;
+   padding-left: 0;
+}
+header .et_mobile_menu li a:hover {
+   background-color: transparent;
+   opacity: 1;
+   color: #3aa6e0;
+}
+header .et_mobile_menu li ul.sub-menu li a{
+   padding: 10px 40px;
+}
+
+// If page URL
+<script>
+$(function() {
+    if(window.location.href=== "https://www.cul.org/initiatives/summer-youth-programs/?return=#young-geniuses") {
+         $("body").addClass("secActive");
+     }    
+});
+</script>
+
+// on click add remove class in listing
+var selector = '.nav li';
+
+$(selector).on('click', function(){
+    $(selector).removeClass('active');
+    $(this).addClass('active');
+});
+
+// Hide When reached section
+$(window).on('scroll', function(event) { 
+    var winTop = $(window).scrollTop();
+    var startSec = $('#needhelpnow').offset();
+    var winHeight =  $(window).height();
+    //console.log(winTop + winHeight,  startSec.top);
+    if(winTop + winHeight > startSec.top) {
+        $('.restoringBtn').hide()
+    }else {
+        $('.restoringBtn').show()
+    }
+});
+
+// click select option and add class remove class
+$("#rReservation").change(function(){
+    if($(this).val() == "1") {
+       $('.box').addClass('removed');
+    } else {
+       $('.box').removeClass('removed');
+    }
+});
+
+Find and replace url
+https://wordpress.org/plugins/better-search-replace/
+
+Fixed maintenance issue
+https://themeisle.com/blog/fix-briefly-unavailable-for-scheduled-maintenance-check-back-in-a-minute/#:~:text=You%20might%20be%20surprised%20to,your%20site%20are%20being%20updated.
+
+// Is product category ID
+<?php if( is_product_category( array( 935,1176 ) ) ) { ?>
+<!--Breadcrumb start!-->
+<div class="breadcrumb productlistbreadcumb">
+	<div class="wrapper">
+		<?php woocommerce_breadcrumb(); ?>
+	</div>
+</div>
+<!--Breadcrumb end!-->
+<?php } else { ?>
+
+<?php if( is_front_page() && is_home() ) { ?>
+    // you are on homepage, show your another menu
+<?php } else { ?>
+<div class="category_menu">
+    <nav class="cat_menu">
+        <div class="menu_title parent_cat_name">
+            <h6><?php echo $category->name; ?></h6>
+        </div>
+        <?php rs_left_menu_subcats($subcategories); ?>
+    </nav>
+</div>
+<?php } ?>
+
+/* For find the cpanel url */
+go to terminal
+ping devenderkumar.com
+
+/* Add class when scroll */
+<script>
+	// bellow class-name is the class which touched on the top of screen 
+	var bottom = $('.backBtn').offset().top;
+	$(window).scroll(function(){    
+		if ($(this).scrollTop() > bottom){ 
+			// bellow class-name is the class that contain the CTA button
+			$('.mbtnWrap a.registerBtn.mtn').addClass('content_fixed'); 
+		}
+		else{
+			$('.mbtnWrap a.registerBtn.mtn').removeClass('content_fixed');
+		}
+	});
+</script>
+
+/* Mobile conditions class */
+<?php echo wp_is_mobile() ? 'mobile-layout' : '' ?>
+
+/* Is mobile desktop condition */
+<?php if( wp_is_mobile()){ ?>
+   <span>mobile stuff goes here</span>
+<?php } else { ?>
+   <span>desktop stuff goes here</span>
+<?php } ?>
+
+/* get worpdress media image alt text for using ACF */
+<?php if (get_sub_field('logo')): 
+			
+			$imageID = get_sub_field( 'logo', get_the_ID() );
+			$id  = attachment_url_to_postid( $imageID );
+			$alt_text = get_post_meta( $id , '_wp_attachment_image_alt', true );
+			?>
+
+<img src="<?php echo get_sub_field('logo'); ?>" alt="<?php echo $alt_text; ?>"/>
+
+
+/* Language condition */
+<?php if ( ICL_LANGUAGE_CODE=='ar' ) { ?>
+			<h1 class="page-title">دليل الأعمال</h1>
+		<?php } elseif(ICL_LANGUAGE_CODE=='tr'){ ?>
+			<h1 class="page-title">İş Rehberi</h1>
+		<?php } else { ?>
+			<h1 class="page-title">Business Directory</h1>
+		<?php } ?>
+
+/**************************
+		* Scroll down menu fixed  *
+		***************************/
+
+        $(window)
+            .scroll(function() {
+                var wind = $(window)
+                    .scrollTop()
+                var wheight = $("header")
+                    .height() + 100;;
+                if (wind <= wheight) {
+                    $('.panel-group')
+                        .removeClass('fixed')
+                } else {
+                    $('.panel-group')
+                        .addClass('fixed')
+                }
+            });
+
+/* Click to see more text */
+<script>
+$(document).ready(function() {
+    var showChar = 898;
+	var ellipsestext = "... ";
+    var moretext = "Read More";
+    var lesstext = "less";
+    $('.ourteamcontentmore').each(function() {
+        var content = $(this).html();
+
+        if(content.length > showChar) {
+
+            var c = content.substr(0, showChar);
+
+            var html = '<div class="main-txt">' + c + '<span class="moreellipses">' + ellipsestext+ ' </span>  <a href="" class="morelink btnlink">' + moretext + '</a></div><div class="morecontent less">' + content + '<a href="" class="morelink">' + lesstext + '</a></div>';
+
+            $(this).html(html);
+        }
+
+    });
+
+    $(document).on("click", ".morelink", function(){
+        $(this).parents('.ourteamcontentmore').find('div').toggleClass("less")
+		//$(this).find('.morelink').html()
+		
+        return false;
+    });
+	
+	$(window).scroll(function () {
+	if ($(this).scrollTop() > 10){
+		$('header.et-l.et-l--header').addClass("small");
+	} else {
+		$('header.et-l.et-l--header').removeClass("small");
+	}
+});
+});
+  </script>
+
+
+/* Replace text */
+$(".post-job #createjob option").text(function () {
+    return $(this).text().replace("Stable Families", "Siemer Institute"); 
+});
+
+
+/* Countdown timer */
+<section class="countdown-container">
+  
+  <div class="days-container item">
+    <div class="days"></div>
+    <div class="days-label label">days</div>
+  </div>
+  
+  <div class="hours-container item">
+    <div class="hours"></div>
+    <div class="hours-label label">hours</div>
+  </div>
+  
+  <div class="minutes-container item">
+    <div class="minutes"></div>
+    <div class="minutes-label label">minutes</div>
+  </div>
+  
+  <div class="seconds-container item">
+    <div class="seconds"></div>
+    <div class="seconds-label label">seconds</div>
+  </div>
+  
+</section>
+
+<script>
+const countDownClock = (number = 100, format = 'seconds') => {
+  
+  const d = document;
+  const daysElement = d.querySelector('.days');
+  const hoursElement = d.querySelector('.hours');
+  const minutesElement = d.querySelector('.minutes');
+  const secondsElement = d.querySelector('.seconds');
+  let countdown;
+  convertFormat(format);
+  
+  
+  function convertFormat(format) {
+    switch(format) {
+      case 'seconds':
+        return timer(number);
+      case 'minutes':
+        return timer(number * 60);
+        case 'hours':
+        return timer(number * 60 * 60);
+      case 'days':
+        return timer(number * 60 * 60 * 100);             
+    }
+  }
+
+  function timer(seconds) {
+    const now = Date.now();
+    const then = now + seconds * 1000;
+
+    countdown = setInterval(() => {
+      const secondsLeft = Math.round((then - Date.now()) / 1000);
+
+      if(secondsLeft <= 0) {
+        clearInterval(countdown);
+        return;
+      };
+
+      displayTimeLeft(secondsLeft);
+
+    },1000);
+  }
+
+  function displayTimeLeft(seconds) {
+    daysElement.textContent = Math.floor(seconds / 86400);
+    hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
+    minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60);
+    secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
+  }
+}
+
+
+/*
+  start countdown
+  enter number and format
+  days, hours, minutes or seconds
+*/
+countDownClock(10, 'days');
+</script>
+
+// listing anamation with css link
+https://codepen.io/HJ-b/pen/yYNXmR
+
+// Divi coloum slider
+HTML
+create a row for every coloum
+
+jQuery(document).ready(function($){
+
+    jQuery(".slider-row").wrapAll("<div class='slider-row-wrapper owl-carousel container'></div>");
+
+    $('.slider-row-wrapper').owlCarousel({
+        loop:true,
+        margin:30,
+        nav:true,
+        dots:false,
+        responsive:{
+            0:{
+                margin:0,
+                items:1
+            },
+            768:{
+                margin:15,
+                items:2
+            },
+            1024:{
+                margin:20,
+                items:3
+            },
+            1280:{
+                items:4
+            }
+        }
+    })
+
+});
+
+
+// Search Title
+<?php the_search_query(); ?>
+
+// Wordpress post pagination
+1. add this code to fungtions.php
+// Pagination
+function search_filter($query) {
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ($query->is_search) {
+      $query->set('paged', ( get_query_var('paged') ) ? get_query_var('paged') : 1 );
+      $query->set('posts_per_page',6);
+    }
+  }
+}
+2. add this code to template
+<?php the_posts_pagination(); ?>
+
+// Wordpress post next prev link
+<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
+<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
+
+//Default WordPress post image size
+the_post_thumbnail( 'thumbnail' );     // Thumbnail (150 x 150 hard cropped)
+the_post_thumbnail( 'medium' );        // Medium resolution (300 x 300 max height 300px)
+the_post_thumbnail( 'medium_large' );  // Medium Large (added in WP 4.4) resolution (768 x 0 infinite height)
+the_post_thumbnail( 'large' );         // Large resolution (1024 x 1024 max height 1024px)
+the_post_thumbnail( 'full' );          // Full resolution (original size uploaded)
+ 
+//With WooCommerce
+the_post_thumbnail( 'shop_thumbnail' ); // Shop thumbnail (180 x 180 hard cropped)
+the_post_thumbnail( 'shop_catalog' );   // Shop catalog (300 x 300 hard cropped)
+the_post_thumbnail( 'shop_single' );    // Shop single (600 x 600 hard cropped)
+
+/* Sticky Post */
+function get_term_sticky_posts()
+{
+    // First check if we are on a category page, if not, return false
+    if ( !is_category() )
+        return false;
+
+    // Secondly, check if we have stickies, return false on failure
+    $stickies = get_option( 'sticky_posts' );
+
+    if ( !$stickies )
+        return false;
+
+    // OK, we have stickies and we are on a category page, continue to execute. Get current object (category) ID
+    $current_object = get_queried_object_id();
+
+    // Create the query to get category specific stickies, just get post ID's though
+    $args = [
+        'nopaging' => true,
+        'post__in' => $stickies,
+        'cat' => $current_object,
+        'ignore_sticky_posts' => 1,
+        'fields' => 'ids'
+    ];
+    $q = get_posts( $args );
+
+    return $q;
+}
+
+add_action( 'pre_get_posts', function ( $q )
+{
+    if (    !is_admin() // IMPORTANT, make sure to target front end only
+         && $q->is_main_query() // IMPORTANT, make sure we only target the main query
+         && $q->is_category() // Only target category archives
+    ) {
+        // Check if our function to get term related stickies exists to avoid fatal errors
+        if ( function_exists( 'get_term_sticky_posts' ) ) {
+            // check if we have stickies
+            $stickies = get_term_sticky_posts();
+
+            if ( $stickies ) {
+                // Remove stickies from the main query to avoid duplicates
+                $q->set( 'post__not_in', $stickies );
+
+                // Check that we add stickies on the first page only, remove this check if you need stickies on all paged pages
+                if ( !$q->is_paged() ) {
+
+                    // Add stickies via the the_posts filter
+                    add_filter( 'the_posts', function ( $posts ) use ( $stickies )
+                    {   
+                        $term_stickies = get_posts( ['post__in' => $stickies, 'nopaging' => true] );
+
+                        $posts = array_merge( $term_stickies, $posts );
+
+                        return $posts;
+                    }, 10, 1 );
+                }
+            }
+        }
+    }
+});
+
+// If get field add class
+<?php if(get_field('slideshow')){ echo 'showslideSec'; } ?>
+
+// If Get the field
+<?php if ( get_field('title')) { ?>
+<h1><?php the_field('title'); ?></h1>
+<?php } else { ?>
+<h1>asdasd asda </h1>
+<?php }?>
+
+// get the current taxonomy term
+$term = get_queried_object();
+
+// Remove Taxonomy Base Slug wordpress plugin
+Remove Taxonomy Base Slug
+By Alexandru Vornicescu
+
+// get category name
+<?php $category_detail = get_the_category($post->ID);//$post->ID
+                            if ( ! empty( $category_detail ) ) { ?>
+                            <p class="catname"><?php
+                                foreach($category_detail as $category) { 
+                                    echo $category->cat_name . ' '; 
+                                } 
+                                ?></p>
+                                <?php } ?>
+
+// Child category name
+<?php
+  $categories = get_the_category();
+  if ( ! empty( $categories ) ) {
+  echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+  }
+?>
+
+// search-replace wordpress plugin
+https://wordpress.org/plugins/search-replace/
+
+// ajax load more wordpress plugin shortcode 
+<?php echo do_shortcode( '[ajax_load_more post_type="post" container_type="ul" posts_per_page="2" scroll="false" transition="fade" button_label="Load More"]' );  ?>
+
+// If Language Condition
+<?php if(ICL_LANGUAGE_CODE=='en'){ ?>
+
+<?php }else{ ?>
+
+	<style>	
+		body *{font-family: 'Microsoft YaHei Regular',Roboto;font-weight: normal !important;} 	    	
+	</style>
+<?php } ?>
+
+// post tag
+<?php
+                        global $post;
+                        foreach(get_the_tags($post->ID) as $tag)
+                        {
+                            echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+                        }
+                    ?> 
+
+// custom post type tag
+<?php
+                            $posttags = get_the_term_list( $post->ID, 'tag');
+                            print_r($posttags);
+                            if ($posttags) {
+                              foreach($posttags as $tag) {
+                                echo $tag->name . ' '; 
+                              }
+                            }
+                    //echo strip_tags( get_the_term_list( $post->ID, 'tag', '', ', ') )
+                    
+                            ?> 
+
+// Fixed Sidebar
+view-source:https://igsumo.com/wp-content/themes/instagram/js/sticky-sidebar.js
+
+$(document).ready(function () {
+	var footer_height = $('.et-l--footer').outerHeight();	
+	var total_height = footer_height
+	var elmId = $(".single-post #sidebar").attr("id");
+	
+		$.stickysidebarscroll('#' + elmId, {
+			offset: {
+				top: 90,
+				bottom: total_height
+			}
+		});
+	
+});
+
+// get date
+<?php the_date("D j M"); ?>
+
+// laravel Home page link
+{{ url('/page/shipping-delivery') }}
+
+// Custom Modal popup
+HTML
+<a class="show-popup" href="#" data-showpopup="1" >Methadone (LINK)</a>
+<a class="show-popup " href="# data-showpopup="2" >Suboxone (LINK)</a>
+
+$(document).ready(function(){
+    function showPopup(whichpopup){
+     var docHeight = $(document).height();
+     var scrollTop = $(window).scrollTop();
+     $('.overlay-bg').show().css({'height' : docHeight});
+     $('.popup'+whichpopup).show();
+    }
+    // function to close our popups
+    function closePopup(){
+        $('.overlay-bg, .overlay-content').hide();
+    }
+    $('.show-popup').click(function(event){
+        event.preventDefault();
+        var selectedPopup = $(this).data('showpopup');
+        $("body").addClass("hidePopup");
+        showPopup(selectedPopup);
+    });
+    $('.close-btn, .overlay-bg').click(function(){
+        closePopup();
+        $("body").removeClass("hidePopup");
+    });    
+});
+
+// Multilevel Menu
+<script>
+    jQuery(document).ready(function(){
+      $(".headernew .topMenu li.menu-item-has-children").prepend("<span class='arrow'></span>");
+      $(".headernew .topMenu li.menu-item-has-children li.menu-item-has-children").prepend("<span class='parent'></span>");
+      $(".headernew .topMenu li.menu-item-has-children li.menu-item-has-children .arrow").hide();
+        
+        $(".topMenu .mobile-hamburger").click(function(){
+            $(".topMenu .main-menu").slideToggle();             
+          });
+       
+        $('.headernew .topMenu li .arrow').click(function (e) {
+            e.preventDefault();
+            if ($(this).parent('li').hasClass('child-active')) {
+                $('.headernew .topMenu li').removeClass('child-active');
+                $(this).siblings('ul.sub-menu').slideUp();
+
+            } else {
+                $('ul.sub-menu').slideUp();
+                $('.headernew .topMenu li').removeClass('child-active');
+                $(this).parent('li').addClass('child-active');
+                $(this).siblings('ul.sub-menu').slideDown();
+            }
+        });
+        $('.headernew .topMenu li .parent').click(function (e) {
+            e.preventDefault();
+            if ($(this).parent('li').hasClass('child-active')) {
+                $('.headernew .topMenu ul.sub-menu li').removeClass('child-active');
+                $(this).siblings('ul.sub-menu').slideUp();
+
+            } else {
+                $('ul.sub-menu ul.sub-menu').slideUp();
+                $('.headernew .topMenu ul.sub-menu li').removeClass('child-active');
+                $(this).parent('li').addClass('child-active');
+                $(this).siblings('ul.sub-menu').slideDown();
+            }
+        });
+    });
+</script>
+
+
+// Contact Form 7 use checkbox with linked content
+[acceptance class:checkbox optional] By submitting this form, you agree to <a href="#">Redwoods Privacy Policy</a>.[/acceptance]
+
+// create shortcode to training [ added limit in shortcode]
+add_shortcode( 'alltraining', 'aj_post_training_parameters_shortcode' );
+function aj_post_training_parameters_shortcode( $atts ) {
+    ob_start();
+    extract(shortcode_atts(array(
+    'limit'     => 3,
+    
+  ), $atts));
+    ?>
+   <section class="training-section">
+   <?php query_posts(array('post_type' => 'training', 'post_status' => 'publish', 'posts_per_page' => $limit )); ?>
+   <?php  if (have_posts()) : ?>
+	<ul class="d-flex training-outer">
+       <?php while (have_posts()) : the_post(); ?>
+        <li>
+            <div class="training-box">
+                <figure>
+                    <a href="<?php echo get_permalink(); ?>"><img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title();?>" /></a>
+                </figure>
+                <h2><a href="<?php echo get_permalink(); ?>"><?php the_title();?></a></h2>
+            </div>
+        </li>
+       <?php endwhile; wp_reset_query(); ?>	
+    </ul>
+   <?php endif; ?>
+</section>
+    <?php $myvariablep = ob_get_clean();
+    return $myvariablep;  
+}
+
+[alltraining limit=-1]
+
+
+// if condition
+<?php
+                // Check for any mobile device.
+                if ($isMobile){
+            ?>
+            <div class="mobile-btnouter">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" id="reg-interest" class="mregbtn reg-interest" data-toggle="modal" data-target="#modal-reg-interest"><?php echo t('Register your Interest') ?></a>
+                    </div>
+                </div>
+            </div>
+            
+            <?php
+              }
+              else { 
+                //print render($page['webform']); ?>
+                 <div class="wasl-container form-container" id="form-container">
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-0 text-left">
+                        <div class="row row-mt-15em">
+                            <div class="col-md-5 col-sm-12 col-xs-12 pull-right animate-box iframContainer" data-animate-effect="fadeInRight">
+                                   <?php print render($page['webform']); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <?php }
+              ?>
+
+
+// Sticky sidebar
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/sticky-sidebar.js"></script>
+<script type="text/javascript">
+	$ = jQuery
+	
+	$(document).ready(function () {
+	var footer_height = $('#footer').outerHeight();
+	var morerelatedpost_height = $('#recent-posts').outerHeight();
+	var footercta_height = $('#footer-cta').outerHeight();
+	var total_height = footer_height + morerelatedpost_height + footercta_height;
+
+	var elmId = $(".post-detail-page-custom .right-sideBar aside#secondary section:last-child").attr("id");
+	
+		$.stickysidebarscroll('#' + elmId, {
+			offset: {
+				top: 90,
+				bottom: total_height
+			}
+		});
+	
+});
+   
+</script>
+
+
+<?php echo do_shortcode( '[ajax_load_more post_type="post" scroll="false" posts_per_page="3" button_label="Load More"]' );  ?>
+
+// Sidebar sticky smooth
+jQuery(function() {
+            var offset = jQuery("#custom_html-3").offset();
+            var topPadding = 15;
+            jQuery(window).scroll(function() {
+                if (jQuery(window).scrollTop() > offset.top) {
+                    jQuery("#custom_html-3").stop().animate({
+                        marginTop: jQuery(window).scrollTop() - offset.top + topPadding
+                    });
+                } else {
+                    $("#custom_html-3").stop().animate({
+                        marginTop: 0
+                    });
+                };
+            });
+        });
+
+
+// Scrolling section
+<script>
+jQuery(document).ready(function () {
+	var hash = window.location.hash;
+    jQuery('html, body').animate({
+        scrollTop: jQuery(hash).offset().top
+    }, 'slow');
+});
+</script>
+
+// Menu To Select box in mobile
+<script>
+    jQuery(window).resize(function(){
+
+       if (jQuery(window).width() <= 1279) {  
+
+          jQuery("ul.selectdropdown").on("click", ".init", function() {
+            jQuery(this).closest("ul.selectdropdown").children('li:not(.init)').toggle();
+        });
+
+        var allOptions = jQuery("ul.selectdropdown").children('li:not(.init)');
+        jQuery("ul.selectdropdown").on("click", "li:not(.init)", function() {
+            allOptions.removeClass('selected');
+            jQuery(this).addClass('selected');
+            jQuery("ul.selectdropdown").children('.init').html(jQuery(this).html());
+            allOptions.toggle();
+        });
+
+   }     
+
+});
+    
+</script>
+
+<script>
+// Menu Accordion
+     jQuery(function() {
+        var Menu = function(el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+
+            var links = this.el.find('.menu-item-has-children a');
+            
+            links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+        }
+
+        Menu.prototype.dropdown = function(e) {
+            var jQueryel = e.data.el;
+                jQuerythis = jQuery(this),
+                jQuerynext = jQuerythis.next();
+
+            jQuerynext.slideToggle();
+            jQuerythis.parent().toggleClass('open');
+
+            if (!e.data.multiple) {
+                jQueryel.find('.sub-menu').not(jQuerynext).slideUp().parent().removeClass('open');
+            };
+        }	
+
+        var menu = new Menu(jQuery('#top-menu-nav'), false);
+    });
+</script>
+
+/* ACF Repeater Accordion */
+<?php if( have_rows('chief_information') ): ?>
+                              <div class="accordion">
+                                  <?php $i=1; while( have_rows('chief_information') ): the_row(); ?>
+                                  <?php if($i==1){ ?>
+                                   <div class="accordion-section box">
+                                        <h3><a class="accordion-section-title active" href="#accordion-<?php echo $i; ?>"><?php the_sub_field('title'); ?></a></h3>
+                                        <div id="accordion-<?php echo $i; ?>" class="accordion-section-content" style="display:block">
+                                            <?php the_sub_field('content'); ?>
+                                        </div>
+                                   </div>
+                                  <?php } else { ?>
+                                  <div class="accordion-section box">
+                                        <h3><a class="accordion-section-title" href="#accordion-<?php echo $i; ?>"><?php the_sub_field('title'); ?></a></h3>
+                                        <div id="accordion-<?php echo $i; ?>" class="accordion-section-content">
+                                            <?php the_sub_field('content'); ?>
+                                        </div>
+                                   </div>
+                                  <?php } $i++; endwhile; ?>
+                              </div>
+                              <?php endif; ?>
+// JS
+<script>
+$(document).ready(function() {
+    function close_accordion_section() {
+        $('.accordion .accordion-section-title').removeClass('active');
+        $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+    }
+ 
+    $('.accordion-section-title').click(function(e) {
+        // Grab current anchor value
+        var currentAttrValue = $(this).attr('href');
+ 
+        if($(e.target).is('.active')) {
+            close_accordion_section();
+        }else {
+            close_accordion_section();
+ 
+            // Add active class to section title
+            $(this).addClass('active');
+            // Open up the hidden content panel
+            $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
+        }
+ 
+        e.preventDefault();
+    });
+});
+</script>
+
+
+
+/* ACF Repeater if get sub field */
+<?php if( have_rows('file_attachments') ): ?>
+        <?php while( have_rows('file_attachments') ): the_row(); 
+        if(get_sub_field('file_upload') != ''){
+        ?>
+            <div class="read-memo">
+                <h2><?php the_sub_field('file_name__title'); ?></h2>
+                
+				<h3>	
+				<a href="<?php the_sub_field('file_upload'); ?>" target="_blank"><?php the_sub_field('file_name__text_for_button'); ?></a>
+				</h3>
+            </div>
+        <?php } endwhile; ?>
+        <?php endif; ?>
+
+/* ACF Field Move to Sidebar (admin select option Position Side) */
+function prefix_reset_metabox_positions(){
+  delete_user_meta( 1, 'meta-box-order_post' );
+  delete_user_meta( 1, 'meta-box-order_page' );
+  delete_user_meta( 1, 'meta-box-order_custom_post_type' );
+}
+add_action( 'admin_init', 'prefix_reset_metabox_positions' );
+
+
+/* If else field */  
+<?php if( get_field('thumbnail_image') ) { ?>        	
+    <img src="<?php the_field('thumbnail_image'); ?>" class="img-responsive" alt="">            
+<?php } else { ?>
+    <img src="https://sidetrack.elsewhere.io/wp-content/uploads/2021/02/placeholder-image.png" alt="" />
+<?php } ?>
+
+/**
+ * Add label to post thumbnail meta box [Add a text in admin for featured image Size]
+ */
+function swd_admin_post_thumbnail_add_label($content, $post_id, $thumbnail_id)
+{
+    $post = get_post($post_id);
+    if ($post->post_type == 'post') {
+        $content .= '<small><i>(Add image larger than 700 x 458 px)</i></small>';
+        return $content;
+    }
+
+    return $content;
+}
+add_filter('admin_post_thumbnail_html', 'swd_admin_post_thumbnail_add_label', 10, 3);
+
+/* Data rel base hide show */
+$(".team-list li .link").mouseenter(function() {               
+        var tab = $(this).parent().parent().attr("data-rel");
+        $(".team-details").not(tab).css("display", "none");
+        $(tab).css("display", "flex");
+    }).mouseleave(function() {
+        $(".team-details").css("display", "none");
+    });
+
+/* If thumbnail */
+<?php if ( has_post_thumbnail() ) { ?>
+                            <figure>
+                                <a href="<?php echo get_permalink(); ?>"><img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title();?>" /></a>
+                            </figure>
+                            <?php } else { ?>
+                               <figure>
+                                  <a href="<?php echo get_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/avatar-placeholder.jpg" alt="<?php the_title();?>" /></a>
+                               </figure>
+                            <?php } ?>
+
+/* taxonomy php code */
+<?php $terms = get_the_terms( $post->ID, 'cat-video' );
+     //print_r($terms);
+     // Loop through them and dislay them
+
+     foreach($terms as $term) {
+
+      echo $term->name;
+} ?>
+
+/* If condition (show section only 4 div) */
+<?php 
+                  if($i == 4){ ?>
+                  <div class="btn-group">
+                      <a href="#">Donate Now</a>
+                      <a href="#">CUL Homepage</a>
+                 </div>    
+                 <?php }
+                ?>
+
+/*=========================================
+		Scroll Section - Header Height
+	=========================================*/
+    
+    $('.scroll-btn a').on('click', function(e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href'));
+        var $header = $('header');
+        $('html, body').animate({
+            scrollTop: $target.offset().top - $header.height() + 'px'
+        }, 600);
+    });
+
+/* On click add and remove class */
+// Menu Active
+    $('.nav li a').click( function(){
+    if ( $(this).hasClass('current') ) {
+        $(this).removeClass('current');
+    } else {
+        $('li a.current').removeClass('current');
+        $(this).addClass('current');    
+    }
+});
+
+/* Popup trigger */
+    $("a.request-demo").click(function(){
+    $("#et-boc .area-outer-wrap .da-close").trigger("click");
+    });
+
+/* click on input label move up */
+jQuery(document).ready(function($){
+	// on focus
+	$(".wpcf7-form input").focus(function() {
+			$(this).parent().siblings('label').addClass('has-value');
+	})
+	// blur input fields on unfocus + if has no value
+	.blur(function() {
+		var text_val = $(this).val();
+		if(text_val === "") {
+			$(this).parent().siblings('label').removeClass('has-value');
+		}
+	});
+});
+
+/* On click go to other page section  */
+$(function(){
+    if(window.location.hash){
+        //var space = $(window).width() > 980 ? 120 : 0;
+        var space = $(window).width() > 980 ? 120 : 75;
+        $('html,body').animate({
+            scrollTop:$(window.location.hash).offset().top - space
+            },1000,'swing');
+        }
+    }); 
+
+/* repeat under repeat acf-nest-repeat */
+    <?php if( have_rows('grade_repeat') ): ?>
+
+        <?php while ( have_rows('grade_repeat') ) : the_row(); ?>
+
+            <h3><?php the_sub_field('class_level'); ?></h3>
+
+              <?php if( have_rows('class_repeater') ): ?>
+
+                    <?php while( have_rows('class_repeater') ): the_row(); ?>
+
+                       <ul>
+                         <li><?php the_sub_field('class_date'); ?> - <?php the_sub_field('class_name'); ?></li>
+                       </ul>
+                    <?php endwhile; ?>
+
+                  <?php endif; ?>
+
+        <?php endwhile; ?>
+
+      <?php else : ?>
+
+      <?php endif; ?>
+
+/* CSS Firfox Only */
+@-moz-document url-prefix() {
+	#content{
+		min-height: calc(100vh - 307px);
+	}
+}
+
+/* Fix Sidebar */
+    $(function() {
+            var offset = $("#sidebar").offset();
+            var topPadding = 15;
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > offset.top) {
+                    $("#sidebar").stop().animate({
+                        marginTop: $(window).scrollTop() - offset.top + topPadding
+                    });
+                } else {
+                    $("#sidebar").stop().animate({
+                        marginTop: 0
+                    });
+                };
+            });
+        });
+
+// If User Login PHP Code
+<?php if ( is_user_logged_in() ) { ?>
+  <li class="login"><a href='<?php echo get_option('home'); ?>/my-account/'>My Account</a></li>
+<?php } else { ?>
+  <li class="login"><a href='<?php echo get_option('home'); ?>/my-account/'>Login</a></li>
+<?php } ?>
+
+// Convert navigation to select 
+<script>
+jQuery(function() {
+    jQuery('.woocommerce-MyAccount-navigation ul').each(function() {
+        var $select = jQuery('<select />');
+
+        jQuery(this).find('a').each(function() {
+            var $option = jQuery('<option />');
+            $option.attr('value', jQuery(this).attr('href')).html(jQuery(this).html());
+            $select.append($option);
+        });
+
+        jQuery(this).replaceWith($select);
+    });
+});
+</script>
+
+// replace text
+$(function(){
+        if ($('.logged-in').length) {
+            $("#menu li.login a").text("My account");
+        } else {
+            $$("#menu li.login a").text("Login");
+        }
+    });
+
+// Div Wrap
+<script>
+$('#tmp_headline1-34734,#tmp_paragraph-97908').wrapAll('<div class="item-single"></div>');
+</script>
+
+
+// Typewriter
+<script>
+jQuery(window).load(function (e) {
+    setTimeout(function () {
+        jQuery('.banner h1').show();
+        new TypingText(document.getElementById("typewriteraj"));
+        TypingText.runAll();
+    }, 500);
+
+});
+</script>
+
+// Hover active and other inactive
+<script>
+jQuery(document).ready(function () {
+    jQuery(".selected-units .unit-slider li").hover(
+
+    function () {
+        jQuery(this).addClass("active",1000).parents('ul').find('li').not(jQuery(this)).addClass('inactive',1000);
+    },
+
+    function () {
+        jQuery(this).parents('ul').find('li').removeClass('active inactive',1000);
+    });
+});
+</script>
+
+// If resize window max width
+$(window).resize(function(){
+
+       if ($(window).width() <= 320) {  
+
+              // is mobile device
+
+       }     
+
+});
+
+// Gravity Form //
+<?php echo do_shortcode( '[gravityform id="7" title="false" description="false" ajax="true"]' );  ?>
+
+// Transition: //
+-webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; 
+
+// On click Copy page link //
+<a href="JavaScript:Void(0);" class="copy-link btn" onclick="CopyLink()">Copy Link</a>  
+    <script>
+        function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+  textArea.style.position = 'fixed';
+  textArea.style.top = 0;
+  textArea.style.left = 0;
+  textArea.style.width = '2em';
+  textArea.style.height = '2em';
+  textArea.style.padding = 0;
+  textArea.style.border = 'none';
+  textArea.style.outline = 'none';
+  textArea.style.boxShadow = 'none';
+  textArea.style.background = 'transparent';
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+
+  document.body.removeChild(textArea);
+}
+
+function CopyLink() {
+  copyTextToClipboard(location.href);
+}
+    </script>
+
+// 404 Page //
+<?php if ( of_get_option('tile_error') && of_get_option('errot_content') ) { ?>
+   		<h1><?php echo of_get_option('tile_error'); ?></h1>
+        <?php echo  of_get_option('errot_content'); ?>
+      <?php } ?>
+
+// Click Hide //   
+$('.navbar-nav>li>a').on('click', function(){
+        $('.navbar-collapse').collapse('hide') && $(".navbar").toggleClass("cross-sign");
+    });
+
+// Print to Category Name //
+<?php $args = array(
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'category_name' => 'flatbed-trucking',
+    'posts_per_page' => 2,
+);
+$arr_posts = new WP_Query( $args );
+
+if ( $arr_posts->have_posts() ) : ?>
+<!--Blogs Section Start-->
+<section class="blogs-sec main-head">
+    <div class="wrapper">
+        <h2><?php the_field('blog_top_title'); ?></h2>
+        <ul>
+            <?php while ( $arr_posts->have_posts() ) :
+                 $arr_posts->the_post();
+            ?>
+            <li>
+                <img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php the_title(); ?>" />
+                <div class="caption-container">
+                    <h3><?php the_title(); ?></h3>
+                    <a class="btn-a" href="<?php the_permalink(); ?>">Read More</a>
+                </div>
+            </li>
+           <?php endwhile; wp_reset_postdata(); ?>
+        </ul>
+    </div>
+</section>
+<!--Blogs Section End-->
+<?php endif; ?>
+// Print to Category Name End //
+
+//One Page Scroll Js//
+<script>
+ 
+  // Navigation active state on scroll
+  var nav_sections = $('section');
+  var main_nav = $('#menu-tax-time-menu');
+  var main_nav_height = $('.textime-header').outerHeight();
+
+  $(window).on('scroll', function () {
+    var cur_pos = $(this).scrollTop();
+  
+    nav_sections.each(function() {
+      var top = $(this).offset().top - main_nav_height,
+          bottom = top + $(this).outerHeight();
+  
+      if (cur_pos >= top && cur_pos <= bottom) {
+        main_nav.find('li').removeClass('menu-active');
+        main_nav.find('a[href="#'+$(this).attr('id')+'"]').parent('li').addClass('menu-active');
+      }
+    });
+  });
+
+// Smooth scroll
+<script>
+  $('#fixedMenu .elNavigatorWrapper a').click(function(e){
+  e.preventDefault();
+  var target = $($(this).attr('href'));
+  if(target.length){
+    var scrollTo = target.offset().top;
+    $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+  }
+});
+</script>
+
+<script>
+  jQuery('#tmp_nav-42311 nav a').on('click', function(e) {
+		if (this.hash != "") {
+			e.preventDefault();
+			var hash = this.hash;
+			jQuery('html, body').animate({
+				scrollTop: jQuery(hash).offset().top - 50
+			}, 1000);
+			if ($(window).width() < 769) {
+				jQuery('html, body').animate({
+					scrollTop: jQuery(hash).offset().top - 0
+				}, 1000);
+			}
+		}
+	});
+ </script>
+    
+// Smooth scroll for the menu and links with .scrollto classes
+  $('#menu-tax-time-menu a').on('click', function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      if (target.length) {
+        var top_space = 0;
+        
+        $('html, body').animate({
+          scrollTop: target.offset().top - main_nav_height
+        }, 1500, 'easeInOutExpo');       
+
+        
+        return false;
+      }
+    }
+  });
+</script>
+//One Page Scroll Js End//
+
+// If has feild
+<?php if( get_field('name') ){ ?>
+    <li><?php the_field('name'); ?></li>
+<?php } ?>
+
+//Find Div and add class body
+$(function(){
+        if ($('.download-report').length) {
+            $('body').addClass('download-report-active');
+        } else {
+            $('body').removeClass('download-report-active');
+        }
+    });
+
+// IF condition in option.php
+<!--social icon start!-->
+<?php if ( of_get_option('linkdin_url') ) { ?>
+<li><a href="#">
+<?php if ( of_get_option('linkdin_img_url') ) { ?>
+    <img src="<?php echo of_get_option('linkdin_img_url'); ?>" alt="<?php bloginfo('name'); ?>" />
+<?php } else { ?>
+    <img src="<?php bloginfo('template_url'); ?>/images/linkdin_icon.png" alt="<?php bloginfo('name'); ?>" />
+<?php } ?>
+</a></li>
+<?php } ?>
+<!--social icon end!-->
+
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+
+
+// Image condition
+<?php if ( has_post_thumbnail() ) { ?>
+                    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title();?>" />
+					<?php } else { ?>
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/post-placeholderimage.jpg" alt="" />
+					<?php } ?>
+
+
+// Owl Slider working on length //
+// Issues slider
+	if($('ul.issues-slider li').length<4){
+		 $('ul.issues-slider').removeClass('owl-carousel');
+	 } 
+    $('.issues-slider.owl-carousel').owlCarousel({
+        loop:true,
+        margin:30,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            700:{
+                items:1
+            },
+            900:{
+                items:3
+            },
+            1100:{
+                items:4
+            }
+        }
+    });
+
+/* only Mobile Slider */
+    jQuery(window).on('load resize', function () {
+        if (jQuery(window).width() <= 767) {
+            $('.partner-mslider').addClass('owl-carousel');
+            $('.partner-mslider').owlCarousel({
+                loop:true,
+                margin:0,
+                nav:false,
+                autoplay:false,
+                dots:true,
+                // animateOut: 'fadeOut',
+                responsive:{
+                    0:{
+                        items:1                        
+                    },
+                    768:{
+                        items:1                
+                    },
+                    1000:{
+                        items:1
+                    }
+                }
+            });
+         }
+      });
+
+// Add Class For Post
+<?php post_class('issuesdetailSec'); ?>
+
+// create shortcode for Our Isuue
+
+/* For admin */
+[show_our_issues_listing category="men" number_of_post_show=2]
+
+/* For functions file*/
+function our_issues_listing($atts, $content = null) {  ob_start(); 
+  
+  extract(shortcode_atts(array(
+    'number_of_post_show'     => -1,
+    'category'    => '',
+  ), $atts));
+  
+  $args = array(
+    'posts_per_page' => $number_of_post_show,
+    'post_type' => 'ourissues',    
+      'tax_query' => array(
+            array(
+                'taxonomy' => 'issue-cat',
+                'field' => 'slug',
+                'terms' => $category
+            )
+        ),      
+  );
+
+
+$posts  = new  WP_Query( $args );   
+if ( $posts->have_posts() ) : while ( $posts->have_posts() ) : $posts->the_post(); ?>
+<div class="issue-container"> 
+<ul>
+    <li>
+        <div class="issue-listing">
+            <?php if ( has_post_thumbnail() ) { ?>
+            <figure>
+                <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title();?>" />
+            </figure>
+            <?php } else { ?>
+               <figure>
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/avatar-placeholder.jpg" alt="<?php the_title();?>" />
+               </figure>
+            <?php } ?>
+			<div class="detail">
+            	<h3><a href="<?php echo get_permalink(); ?>"><?php the_title();?></a></h3>
+            	<?php the_content();?>
+			</div>
+        </div>
+    </li>
+</ul>        
+</div>   
+<?php endwhile; ?><?php wp_reset_postdata(); endif; return ob_get_clean();?>
+
+  
+<?php }
+add_shortcode('show_our_issues_listing', 'our_issues_listing');
+
+// create shortcode add this code for function.php
+add_shortcode( 'upcomingEvent', 'aj_post_event_parameters_shortcode' );
+function aj_post_event_parameters_shortcode( $atts ) {
+    ob_start();
+    ?>
+	<div class="event-slider-outer owl-carousel owl-theme">
+            <?php global $post;
+                 // Retrieve the next 5 upcoming events
+                 $events = tribe_get_events( [ 'posts_per_page' => 5 ] );
+                 foreach ( $events as $post ) {
+                  setup_postdata( $post ); 
+             ?>
+            <div class="item">
+                <div class="left">
+                  <p><?php echo tribe_get_start_date($post, false, 'D' ); ?><br><span><?php echo tribe_get_start_date($post, false, 'j' ); ?></span></p>
+                </div>
+                <div class="right">
+                    <h2><a href="<?php echo get_permalink(); ?>"><?php //echo $post->post_title; ?><?php echo wp_trim_words( get_the_title($post), 4, '...' ); ?></a></h2>
+                  <p><?php echo tribe_get_start_date($post, false, 'l, F j' ); ?> <br><?php echo tribe_get_start_time( $post ); ?> - <?php echo tribe_get_end_time( $post ); ?></p>
+                </div>
+            </div>
+            <?php } ?>
+            
+        </div>
+    <?php $myvariable = ob_get_clean();
+    return $myvariable;  
+}
+
+// create shortcode to All location 
+add_shortcode( 'alllocation', 'aj_post_alllocation_shortcode' );
+function aj_post_alllocation_shortcode( $atts ) {
+    ob_start();
+    global $post; 
+    $ajid = $post->ID;
+    ?>
+    <div class="service_alllocationsec">
+	<?php
+    $featured_posts = get_field('select_locations', $ajid);
+    if( $featured_posts ): ?>
+       <h2>Available at these locations</h2>
+        <ul>
+        <?php foreach( $featured_posts as $post ): 
+
+            // Setup this post for WP functions (variable must be named $post).
+            setup_postdata($post); ?>
+            <li>
+                <?php if ( has_post_thumbnail() ) { ?>
+                <figure>                            
+                   <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title();?>" />                            
+                </figure>
+                <?php } ?>
+                <div class="right-detail">
+                <h3><?php the_title(); ?></h3>
+                <?php the_content(); ?>
+                </div>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+   </div>
+    <?php $myvariable = ob_get_clean();
+    return $myvariable;  
+} 
+
+For Admin
+[alllocation]
+
+// create shortcode to partners
+add_shortcode( 'partnersList', 'aj_post_partners_parameters_shortcode' );
+function aj_post_partners_parameters_shortcode( $atts ) {
+    ob_start();
+    ?>
+   <section class="partner-sec bg-white services-boxes">
+   <?php query_posts(array('post_type' => 'partners', 'post_status' => 'publish', 'posts_per_page' => 8 )); ?>
+   <?php  if (have_posts()) : ?>
+	<ul class="logo-slider owl-carousel owl-theme">
+       <?php while (have_posts()) : the_post(); ?>
+        <li>
+            <figure>
+                <a href="<?php echo get_permalink(); ?>"><img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title();?>" /></a>
+            </figure>
+        </li>
+       <?php endwhile; wp_reset_query(); ?>	
+    </ul>
+   <?php endif; ?>
+</section>
+    <?php $myvariablep = ob_get_clean();
+    return $myvariablep;  
+}
+
+ // Add online path to function.php
+wp_enqueue_script( 'jQuery', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css', array( 'jquery' ), '1.0.0' );
+
+ /* Window load prepend */
+jQuery(window).on('load', function() { jQuery( ".mm-menu" ).prepend( "<span class='mobile-logo'></span>" ); });
+
+//If Page Id
+<?php if(is_page( 2787 ) ) { ?>
+<?php } ?>
+
+// Fancybox With delay
+
+	$('[data-fancybox]').fancybox({
+		youtube : {
+			controls : 0,
+			showinfo : 0
+		},
+		vimeo : {
+			color : 'f00'
+		}	
+	});
+	setTimeout(function(){
+	$(".video-popup a.video").trigger("click");
+	}, 5000);
+
+
+// Svg Upload
+ function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+/* Add Class With Delay */
+$(document).ready(function(){			
+   setTimeout(function() {
+   $('body').addClass("show-form")
+   }, 1000);
+});
+
+/* Toogle menu */
+	$('.left-menu .background h2').click(function(e) {
+        if($(this).hasClass('active'))
+        {
+            $('.left-menu .background h2').removeClass('active');
+            $(this).parent('.background').find('.menuSlide').slideUp();
+        }
+        else
+        {
+            $('.left-menu .background h2').removeClass('active');
+            $(this).addClass('active');
+            $('.left-menu .menuSlide').slideUp();
+            $(this).parent('.background').find('.menuSlide').slideDown();
+        }
+    });
+	
+
+/*If User Login conditions php code*/
+<?php if ( is_user_logged_in() ) { ?>
+	<?php } else { ?>
+<?php } ?>
+
+/*Favicon functions.php code*/
+function my_favicon() {   ?>   
+     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon-icon.png" />
+   <?php  }add_action('wp_head', 'my_favicon');
+add_action( 'admin_head', 'my_favicon' );
+?>
+<?php 
+
+/*Web Site Shorten your link*/
+https://is.gd/
+
+
+// Site URL
+<?php echo get_site_url(); ?>
+
+// Clone and prependTo
+<script>
+jQuery(document).ready(function(){	    	
+	jQuery( ".custom_top_search_sec" ).clone().prependTo( "#mobiles-menu-offcanvas" );
+});
+</script>  
+
+//One page scrolling
+$('.landing-header .menuBar li a').on('click', function(event) {
+			var $anchor = $(this);
+			  $('html, body').stop().animate({
+				scrollTop: $($anchor.attr('href')).offset().top - 70
+			}, 700);
+			  event.preventDefault();
+		});
+	
+$(document).on("scroll", onScroll);
+	function onScroll(event) {
+    var scrollPos = $(document).scrollTop() + 80;   
+    $('nav li a').each(function() {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $('nav li a').removeClass("active");
+            currLink.addClass("active");
+        } else {
+            currLink.removeClass("active");			
+        }
+    });
+	}
+
+// Click outside hide menu
+$(document).ready(function(){
+			$('.second-nav .top-search-icon').click(function(event){
+				event.stopPropagation();
+				 $(".nav-sections .block-search").slideToggle();
+				 $( "input" ).trigger( "focus" );
+			});
+			$(".nav-sections .block-search").on("click", function (event) {
+				event.stopPropagation();
+			});
+		 });
+		$(document).on("click", function () {
+			$(".nav-sections .block-search").hide();
+		});
+
+// Click outside hide menu
+jQuery(document).click(function(e){
+        var selector = jQuery('.menu-item-has-children a');
+        if (!selector.is(e.target) && selector.has(e.target).length === 0) 
+        {
+            jQuery('.parent-submenu > .sub-menu').first().slideUp();
+        }
+    });
+
+// Replace Tag
+if($('.product_img_sec h2').length){		
+			$('.product_img_sec h2').each(function(){
+				var price = $(this).text();
+				//price = price.replace('.', '.<small>');
+				price = price.replace('Product Images', 'Buy Now');
+				$(this).html(price);
+			});
+		}	
+
+// Convert Select to radio buttons
+<script>
+$(document).ready(function(){	
+jQuery("#subscription-option option").each(function(i, e) {	
+  (jQuery("<input type='radio' name='option' />")  
+    .attr("value", jQuery(this).val())
+    .attr("checked", i == 0)
+    .click(function() {
+      jQuery("#subscription-option").val(jQuery(this).val());
+    }).add($("<label>"+ this.textContent +"</label>")))
+    .appendTo("#subscription-option-form");
+});
+});
+</script>
+
+
+// Dynamic date and name
+<div class="post-info">By <?php the_author(); ?> | Posted on <?php the_date(); ?></div>
+
+//One page js(Going to other page)
+if(!$('body').hasClass('page-template-about-us')){
+		$('.cd-primary-nav a').click(function(e) {
+			e.preventDefault();
+			var mainurl = $('header .logo a').attr('href');
+			var url = $(this).attr('href');
+			var hash = url.split('#')[1];
+			if(hash)
+			{   
+			   $('header').addClass('sticky');
+				window.location.href = mainurl+'/about-us/'+url;
+				localStorage.setItem("backload", 1);
+				//$('nav.menu').hide();
+			}
+		});
+		
+	}
+	if($('body').hasClass('page-template-about-us')){
+	  $('.cd-primary-nav a').click(function(e){
+		 e.preventDefault();		
+		$('html, body').animate({
+			scrollTop: $( $(this).attr('href') ).offset().top - 40
+		}, 1000);
+		return false;
+	});
+		
+	}
+
+
+/* Add dynamic class */
+<?php $a=1; while( have_rows('advisory_board') ): the_row(); ?>
+<div class="board-box board-box-<?php echo $a; ?>" data-aos="fade-up"></div>
+<?php $a++; endwhile; ?>
+
+/* Fadein fadeout js */
+<script type="text/javascript">
+	$next = 1;			// fixed, please do not modfy;
+	$current = 0;		// fixed, please do not modfy;
+	$interval = 4000;	// You can set single picture show time;
+	$fadeTime = 800;	// You can set fadeing-transition time;
+	$imgNum = 2;		// How many pictures do you have
+ 
+	$(document).ready(function(){
+		//NOTE : Div Wrapper should with css: relative;
+		//NOTE : img should with css: absolute;
+		//NOTE : img Width & Height can change by you;
+		//$('.slider-sec li').fadeIn();
+ 
+		nextFadeIn();
+	});
+ 
+	function nextFadeIn(){
+		//make image fade in and fade out at one time, without splash vsual;
+		$('.slider-sec li').eq($current).delay($interval).fadeOut($fadeTime)
+		.end().eq($next).delay($interval).hide().fadeIn($fadeTime, nextFadeIn);
+		    
+		// if You have 5 images, then (eq) range is 0~4 
+		// so we should reset to 0 when value > 4; 
+		if($next < $imgNum-1){ $next++; } else { $next = 0;}
+		if($current < $imgNum-1){ $current++; } else { $current =0; }
+	};
+</script>
+
+/*Home Url*/
+<?php echo get_home_url(); ?>
+<?php echo get_permalink('404'); ?>
+
+/* Add Class in parent div */
+$('.more').click(function() {
+	$(this).parents('.show-project').toggleClass('animate')
+});
+
+/* Video */
+<video id="hero_video" class="hero_video" autoplay="" muted="" loop="" playsinline="" preload="auto" poster="https://websiteproofarea.com/regis-new/wp-content/uploads/2018/08/banner.jpg" src="https://websiteproofarea.com/regis-new/wp-content/uploads/2018/08/o-microsite-shots1.mp4"></video>
+
+
+/* Input focus Addclass  */ 
+$(".notes-form input").focus(function(){
+	$(this).parent().addClass('text_focus');
+}).blur(function(){
+	$(this).parent().removeClass('text_focus');
+});
+
+/* on click div up*/
+<script>
+$(function() {
+    $('.banner .arrow').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+                $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 700);
+                return false;
+            }
+        }
+    });
+});
+</script>
+
+
+
+/* Custom Selector */
+var sel = $('<select id="changetriggre">').appendTo('nav.sidebar');
+$('.our-team .sidebar li').each(function() {
+ var val = $(this).find('a').attr('href');
+ var text = $(this).find('a').html();
+  sel.append($("<option>").attr('value',val).html(text));
+});
+
+$('#changetriggre').change(function(e) {
+    var id = $(this).val();
+ var sections = $('.our-team section')
+  , nav = $('.our-team nav')
+  , nav_height = nav.outerHeight();
+  
+ $('html, body').animate({
+    scrollTop: $(id).offset().top - nav_height
+  }, 500);
+});
+
+
+/* Widget Code */
+if ( function_exists('register_sidebar') ) {
+	register_sidebar(array(
+		'name' => 'Memberships Banner',
+		'id' => 'memberships-banner',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widgettitle">',
+		'after_title' => '</h3>',
+	));
+}
+<?php dynamic_sidebar('button-area'); ?>
+
+<?php echo of_get_option('phone'); ?>
+
+/* Menu Code */
+<?php  wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+
+/* Emailer I phone full width */
+<meta name="x-apple-disable-message-reformatting" />
+
+
+// Header Height window resize //
+$(window).resize(function () {
+ //Header Height  
+    var header_height = $('.header').outerHeight();
+    $('.main_container').css({ 'padding-top': header_height });
+});
+
+/* Text Limit js */
+$(".detail .text p").text(function(index, currentText) {
+  return currentText.substr(0, 40) + "...";
+});
+
+/* Remove java/stylesheet type */
+add_filter('script_loader_tag', 'clean_script_tag');
+  function clean_script_tag($input) {
+  $input = str_replace("type='text/javascript' ", '', $input);
+  return str_replace("'", '"', $input);
+}
+
+-----------------------------------------
+
+/* match Height */
+$('.services li, .blog-news .box a').matchHeight();
+
+/* match Height with target */
+$('.left-image, .right-image').matchHeight({ target: $('.shipping-services .right-content')});
+
+-----------------------------------------
+
+/* Widgets */
+<?php dynamic_sidebar( 'footer-contacts' ); ?>
+
+-----------------------------------------
+
+/* Theme option */
+<?php echo of_get_option('copyright_text'); ?>
+
+-----------------------------------------
+
+/* Change Admin Logo */
+function custom_loginlogo() {
+echo '<style type="text/css">
+body.login { background: #fff !important; }
+h1 a {background-image: url('.get_bloginfo('template_directory').'/images/logo.png) !important; width: 195px!important; height: 150px!important; background-size: 195px!important; }
+</style>';
+}
+add_action('login_head', 'custom_loginlogo');
+
+remove_action('wp_head','rest_output_link_wp_head');
+
+add_filter( 'login_headerurl', 'custom_loginlogo_url' );
+function custom_loginlogo_url($url) {
+    return 'http://websiteproofarea.com/dempsey-drywall/';
+}
+
+
+/* Change Child Admin Logo */
+function custom_loginlogo() {
+echo '<style type="text/css">
+body.login { background: #fff !important; }
+h1 a {background-image: url('.get_stylesheet_directory_uri().'/images/logo.png) !important; width: 220px!important; height: 50px!important; background-size: 210px!important; }
+</style>';
+}
+add_action('login_head', 'custom_loginlogo');
+
+remove_action('wp_head','rest_output_link_wp_head');
+
+add_filter( 'login_headerurl', 'custom_loginlogo_url' );
+function custom_loginlogo_url($url) {
+    return 'http://webdevproof.com/wp/sea-ranch-club/';
+}
+
+-----------------------------------------
+
+/* On click add class remove class body */
+<script>
+ $(document).ready(function(e) {
+ 	$('.off-btn').click(function(e) {
+        e.preventDefault();
+		$('body').addClass('discount_banner');
+    });
+	
+	$('.cross').click(function(e) {
+        e.preventDefault();
+		$('body').removeClass('discount_banner');
+    });
+ });
+</script>
+
+-----------------------------------------
+
+/* For Width */
+width: calc(100% - 42px); width: -webkit-calc(100% - 42px); width: -moz-calc(100% - 42px);
+
+---------------------------
+
+/* Character Limit */ 
+$(".blog .detail h2").text(function(index, currentText) {
+    return currentText.substr(0, 50);
+});
+
+---------------------------
+
+
+//input[type=number] hide arrow
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+---------------------------
+
+//input[type=number] hide arrow
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+---------------------------
+
+// Slide and Add class
+$(".banner-menu span.menu").click(function(){
+    $(".banner-menu ul").slideToggle();
+	$(this).toggleClass('close');
+});
+
+---------------------------	
+
+<img src="<?php bloginfo('stylesheet_directory'); ?>/images/maryhaven-news.png" alt="" />
+
+---------------------------
+
+// sub menu slider //
+<script type="text/javascript">
+	$('.left-sidebar .product-categories li.has-child span.toggle:not("ul.sub-menu a")').click(function(e) {
+        e.preventDefault();		 
+		if($(this).parent('li').hasClass('child-active'))
+		{
+			$('.left-sidebar .product-categories li').removeClass('child-active');
+			$(this).parent('li').find('ul.sub-menu').slideUp(); 
+			
+		} else {
+			$('ul.sub-menu').slideUp();
+			$('.left-sidebar .product-categories li').removeClass('child-active');
+			$(this).parent('li').addClass('child-active');
+			$(this).parent('li').find('ul.sub-menu').slideDown(); 
+		}
+    });
+</script>
+
+---------------------------
+
+// Contact Form 7 Submit redirect js // 
+<script>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+  	location = 'http://example.com/';
+}, false );
+</script>
+
+---------------------------
+
+
+// call to contact form 7
+<?php echo do_shortcode( '[contact-form-7 id="51" title="Newsletter"]' );  ?>
+
+/* Header sticky */
+<script>
+  $(window).scroll(function () {
+        if ($(this).scrollTop() > 1) {
+            $('header').addClass("sticky");
+        } else {
+            $('header').removeClass("sticky");
+        }
+  </script>
+
+/* child theme */
+<?php echo get_stylesheet_directory_uri(); ?>
+
+/* Category base class */
+<li class="<?php $term = get_the_terms( $post->ID, 'cat-video' ); echo $term[0]->name; ?>"> 
+
+/* child theme Add css and js */
+function theme_enqueue_styles() {
+    wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/fonts/font-awesome.min.css' );
+
+    wp_enqueue_script( 'owl-js', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', true );
+}
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
+
+//The type attribute  removed
+add_filter( 'script_loader_tag', 'clean_script_tag'  );
+function clean_script_tag( $input ) {
+    $input = str_replace( "type='text/javascript' ", '', $input );
+    return str_replace( "'", '"', $input );
+}
+
+add_filter( 'style_loader_tag',  'clean_style_tag'  );
+function clean_style_tag( $input ) {
+    $input = str_replace( "type='text/css' ", '', $input );
+    return str_replace( "'", '"', $input );
+}
+add_action(
+    'after_setup_theme',
+    function() {
+        add_theme_support( 'html5', [ 'script', 'style' ] );
+    }
+);
+?>
+
+/* Thumbnail Image */
+<?php the_post_thumbnail( 'full' ); ?> 
+<?php the_post_thumbnail_url(); ?>
+
+::-webkit-input-placeholder {
+ opacity:1;
+}
+:-moz-placeholder { 
+ opacity:1;
+}
+::-moz-placeholder {  
+ opacity:1;
+}
+:-ms-input-placeholder {
+ opacity:1;
+}
+
+// PHP comment
+<? php /*<video width="640" height="360" preload="auto" controls="controls" poster="">
+                <source src="<?php print file_create_url($node->field_video['und'][0]['uri']); ?>" type="video/mp4" />
+              </video> */ ?>
+
+---------------------------
+
+// Select Down arrow //
+-webkit-appearance: none; -moz-appearance: none;
+
+transition: all 0.3s ease 0s;
+-webkit-transition: all 0.3s ease 0s;
+
+/* Text Center */
+transform: translate(-50%, 0);
+-moz-transform: translate(-50%, 0);
+-o-transform: translate(-50%, 0);
+-ms-transform: translate(-50%, 0);
+-webkit-transform: translate(-50%, 0);
+
+post code
+T2C 5C6
+
+print background color css
+*{
+	color-adjust: exact;
+	-webkit-print-color-adjust: exact;
+	box-sizing: border-box;
+}
+
+width: calc((100% - 60px) / 3);
+
+/* Mac Safari hack */
+@media not all and (min-resolution:.001dpcm){ 
+@supports (-webkit-appearance:none) {
+
+    .ameniries .left .slider_right li { 
+       line-height:58px;
+    }	
+}}
+
+@supports (overflow:-webkit-marquee){
+	
+     .ameniries .left .slider_right li { 
+       line-height:58px;
+    }	
+}
+/* Chrome hack */
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    .btn{ 
+        line-height: 1.3;
+        
+    }
+}
+/* firfox hack */
+@-moz-document url-prefix() { 
+  .btn{ 
+        line-height: 24px;
+        
+    }
+}
+
+/* Drupal field code */
+<h2><?php print $node->field_plan_title['und'][0]['value']; ?></h2>
+
+Justchoice Captcha admin link
+https://justchoice.org/admin/config/people/captcha/hcaptcha
+
