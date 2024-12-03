@@ -183,16 +183,72 @@ var b = -20;
 // console.log("The value of b is " + b);
 
 // Write a program to swap two numbers without using third variable?
+// var a = 5;
+// var b = 10;
+
+// // Output b = 5; a = 10;
+
+// a = a + b; // a = 15;
+// b = a - b // b = 5;
+// a = a - b; // a = 10;
+
+// console.log("The value of a is " + a);
+// console.log("The value of b is " + b);
 
 
+// 🙋‍♂️👨‍🎓 Interview Question 4 🙋‍♂️👨‍🎓
+// What is the difference between == and === ?
+//Sol:
+// var num1 = 5;
+// var num2 = '5';
+
+// console.log(typeof (num1));
+// console.log(typeof (num2));
+// console.log(num1 == num2);
+// console.log(num1 === num2);
 
 
+/*** Section 6👍 Cpntrol Statement ***/
+// 1️⃣ IF ... else
+// The if statment executes a statement if a specified condition is truthy
+// If the condition is falsy, another statment can be executed
+
+// var tomr = 'rain';
+
+// if (tomr == 'rain') {
+//     console.log("Take a raincoat");
+// } else {
+//     console.log("No need to take raincoat");
+// }
 
 
+// 🙋‍♂️👨‍🎓 Question 🙋‍♂️👨‍🎓
+// Write a program that works out whether if a given year is a leap year or not?
 
+// var year = 2020;
+// debugger;
+// if (year % 4 === 0) {
+//     if (year % 100 === 0) {
+//         if (year % 400) {
+//             console.log("The Year " + year + " is a leap year");
+//         } else {
+//             console.log("The Year " + year + " is not a leap year");
+//         }
+//     } else {
+//         console.log("The Year " + year + " is a leap year");
+//     }
+// } else {
+//     console.log("The Year " + year + " is not a leap year");
+// }
 
+// 🙋‍♂️👨‍🎓 Question 🙋‍♂️👨‍🎓
+// What is truthy and falsy values in JavaScript?
 
+// We have total 5 falsy values in javaScript
+// ✋ 0,"", undefined,null,NaN, flase** is false anyway
 
-
-
-
+if (score = 0) {
+    console.log("Yay, We won the game 😅");
+} else {
+    console.log("Yay, We loss the game 😟");
+}
