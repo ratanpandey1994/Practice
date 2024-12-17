@@ -7,7 +7,7 @@ const aboutItems = [
     },
     {
         label: 'Years of experience',
-        number: 10
+        number: 5
     }
 ];
 const About = () => {
@@ -17,9 +17,9 @@ const About = () => {
             className='section'
         >
             <div className='container'>
-                <div className='bg-zinc-800/50 p-7 rounded-2xl md:p-12'>
+                <div className='bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up'>
                     <p className='text--zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]'>
-                        Welcome! I&apos;m Henry, a professional web developer with a knack for crafting visually stunning and highly functional websites. Combining creativity and technical expertise. I transform your vision into digital masterpiece that excels in both appearance and performance.
+                        Welcome! I'm Ratan Pandey, a professional UI developer with a talent for designing visually captivating and user-friendly interfaces. Combining creativity and technical skills, I bring your ideas to life, delivering digital experiences that are both engaging and highly functional.
                     </p>
                     <div className='flex flex-wrap items-center gap-4 md:gap-7'>
                         {
@@ -35,7 +35,7 @@ const About = () => {
                         }
 
                         <img
-                            src='/images/logo.svg'
+                            src='images/logo.svg'
                             alt='Logo'
                             width={30}
                             height={30}
