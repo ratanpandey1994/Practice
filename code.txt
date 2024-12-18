@@ -1,0 +1,39 @@
+
+====================
+alt="<?php echo $alt = get_post_meta(get_sub_field('image', false), '_wp_attachment_image_alt', true) ?  get_post_meta(get_sub_field('image', false), '_wp_attachment_image_alt', true) : 'Og Web Solutions'; ?>"
+
+
+==================
+
+$(window).on('scroll', function() {
+	var scrollPos = $(this).scrollTop()
+	var windowHeight =  $(window).height() 
+	var blogHeight = $('.blog-list-box').height()
+	var bottomDiff = Math.ceil((windowHeight - blogHeight) / 2) - 50;
+	console.log(bottomDiff);
+	
+	$('.blog-list-box .image_overlay').css('opacity', 1)
+	$('.blog-list-box .imag_hover').css('opacity', 0)
+	
+	$('.blog-list-box').each(function() {
+		var thisOffset = $(this).offset()
+		if(thisOffset.top > (scrollPos - bottomDiff) && thisOffset.top + blogHeight < (scrollPos + windowHeight - bottomDiff)) {
+			$(this).find('.image_overlay').css('opacity', 0)
+			$(this).find('.imag_hover').css('opacity', 1)
+		}
+	})
+
+})
+
+
+==================================================
+jQuery(window).on('scroll', function() {
+	var scrollPos = jQuery(this).scrollTop();
+	var windowHeight =  jQuery(window).height(); 
+	var blogHeight = jQuery('.blog-list-box').height()
+	var bottomDiff = Math.ceil((windowHeight - blogHeight) / 2);
+	console.log(scrollPos);
+	console.log(windowHeight);
+	console.log(blogHeight);
+	console.log(bottomDiff);
+});

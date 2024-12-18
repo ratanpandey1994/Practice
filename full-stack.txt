@@ -1,0 +1,238 @@
+All video:- 
+
+1.Web Development Playlist:   
+Become a Web Development Master in 2023 
+
+2.React In One Video:   
+MASTER REACT JS IN ONE VIDEO WITH 5 Project
+
+3.React Js Full Playlist:   
+REACT JS COURSE 2023
+
+4.React -   
+Build and Deploy Your Own MI Store
+
+5.Redux Video -   
+Redux & Redux Toolkit Tutorial in Hindi
+
+6.Backend In One Video:   
+Master the BACKEND in One Video
+
+7.Node -   
+Node JS Made Easy in Hindi: Learn Node
+
+8.Express -   
+Express JS in One Lesson: A Complete
+
+9.MongoDB -   
+Master MongoDB: A Comprehensive Tutorial
+
+10.RestApi -   
+Build a RESTful API: A One-Stop Tutorial
+
+11.E-commerce:   
+MERN STACK ECOMMERCE WEBSITE
+
+12.Mern Stack Supreme:   
+MERN STACK SUPREME
+
+
+
+https://www.youtube.com/watch?v=b50zSyLiCYQ
+https://www.youtube.com/playlist?list=PLt5mNkGuWcuWSUHxSzWP74IU9U4BTVLt0
+https://www.youtube.com/watch?v=99kgUCIMboY
+https://www.youtube.com/watch?v=pBgQhZcQxMw
+https://www.youtube.com/watch?v=cGAdC4A5fF4
+https://www.youtube.com/watch?v=BSO9C8Z-YV8
+https://www.youtube.com/watch?v=teipbke8c4A
+https://www.youtube.com/watch?v=AYDP1S5BbTo
+https://www.youtube.com/watch?v=AhCSfuG9Jxw
+https://www.youtube.com/watch?v=AN3t-OmdyKA
+https://www.youtube.com/playlist?list=PLt5mNkGuWcuXc26LBe_5mBfVoN-12q_ns
+https://www.youtube.com/playlist?list=PLt5mNkGuWcuVHnFSXrR16Q5wfJZ_BIgLO
+
+=>inline elements
+span,i,em
+
+=>block elements
+div,p,table
+
+=>Sementic tag
+article,footer,header,nav,section,aside
+
+=>Non Sementic Tag
+div,p,table
+
+=>child selecter/child combinator
+p > span {color:red;}
+
+=>Decendent combinator
+li li { color:red; }
+
+=>Adjacent sibling selector
+h1+p {color:red;}
+
+=>general sibling slector
+h1~P{ color:red; }
+
+https://www.w3schools.com/css/css_combinators.asp
+
+text-indent: 50% (First line start after 50%)
+
+
+watched : 11
+FlexBox -15
+Grid -17
+Transition -18
+19
+
+JavaScript
+watched - 4 - 0
+
+
+====================
+######**JavaScript**######
+
+-JavaScript improves the user experience of the web page by converting it from a static page into an interative one.
+or
+JavaScript adds behavior to web page.
+
+######**JavaScript has 8 Datatypes**######
+String
+Number
+Bigint
+Boolean
+Undefined
+Null
+Symbol
+Object
+
+######**Difference between null vs undefined?**######
+
+`null` and `undefined` are both special values in JavaScript, but they are used in different contexts and have distinct meanings. Here’s a breakdown of their differences:
+
+### 1. **Type**
+   - **`undefined`**: It is a type and a value in JavaScript. The type of `undefined` is `"undefined"`.
+   - **`null`**: It is a value that represents the intentional absence of any object value. The type of `null` is `"object"`.
+
+   ```javascript
+   console.log(typeof undefined); // "undefined"
+   console.log(typeof null); // "object"
+   ```
+
+### 2. **Meaning**
+   - **`undefined`**: This means a variable has been declared but has not been assigned a value. It also represents the default return value of functions that do not explicitly return anything.
+   
+   ```javascript
+   let a;
+   console.log(a); // undefined
+   
+   function myFunction() {}
+   console.log(myFunction()); // undefined
+   ```
+
+   - **`null`**: This is an assignment value that represents the intentional absence of any object value. It’s explicitly set by the programmer to indicate “no value.”
+
+   ```javascript
+   let b = null;
+   console.log(b); // null
+   ```
+
+### 3. **When to Use**
+   - **`undefined`**: Typically used by JavaScript itself to indicate the absence of a value. It’s automatically assigned to variables that have been declared but not yet initialized, as well as to function parameters that are not provided with arguments.
+   
+   - **`null`**: Used by programmers to explicitly indicate that a variable should be empty or have no value. It's often used to reset or clear a variable.
+
+   ```javascript
+   let user = { name: "John" };
+   user.name = null; // The name is explicitly set to "no value"
+   ```
+
+### 4. **Equality**
+   - **`undefined == null`**: When using the loose equality operator (`==`), `null` and `undefined` are considered equal because they are both falsy and represent an absence of value.
+   
+   ```javascript
+   console.log(null == undefined); // true
+   ```
+
+   - **`undefined === null`**: However, with the strict equality operator (`===`), they are not equal because they are of different types.
+   
+   ```javascript
+   console.log(null === undefined); // false
+   ```
+
+### 5. **Common Scenarios**
+   - **`undefined`**:
+     - Variables declared but not yet assigned a value.
+     - Function parameters that are not provided.
+     - Missing properties in an object.
+     - Accessing an array index that doesn't exist.
+
+   - **`null`**:
+     - Explicitly assigned by a developer to indicate that a variable should have no value.
+     - Used to reset or clear a value, such as when an object reference is no longer needed.
+
+### 6. **Default Values**
+   - **`undefined`**: The default value of a variable that has been declared but not initialized.
+   - **`null`**: Not a default value; must be explicitly assigned.
+
+### Summary
+- **`undefined`**: Indicates that a variable has been declared but not yet assigned a value. It’s used by JavaScript automatically.
+- **`null`**: Represents the intentional absence of any object value. It’s used by developers to explicitly denote that a variable is empty or has no value.
+
+Understanding the difference between `null` and `undefined` is important for writing robust JavaScript code and avoiding common errors related to uninitialized or absent values.
+
+
+######**What is NaN?**######
+*** NaN is property of the global object.
+*** In other words, it is a variable in global scope.
+*** The initial value of NaN-A-Number.
+
+######**Expression and operator**######
+Assignment operators
+Arithmetic operators
+Comparison operators
+Logical operators
+String operators
+Conditional(Ternary) operators
+
+
+**** The modulus operator (%) returns the division remainder
+
+2:24
+
+Portfolio
+26:00
+npm create vite@latest
+cd portfolio
+npm install
+npm run dev
+rafc - for the react functional component templete
+
+New Portfolio
+1:34:16
+npm create vite@latest ratan-pandey
+cd ratan-pandey
+npm install
+npm run dev
+
+
+npm i tailwind-scrollbar
+npm install prop-types
+rafce
+https://getform.io/
+Lenis 
+https://lenis.darkroom.engineering/
+
+https://tailwindcss.com/docs/guides/vite
+npm install -D tailwindcss postcss autoprefixer
+
+
+https://github.com/ironcodingofficial/portfolio-website
+=============
+React Mi Store Clone
+
+-npx create-react-app .
+
+
+
