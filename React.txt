@@ -1,0 +1,195 @@
+React---------
+--------------
+React is JavaScript library for building user interface.
+React is a client-side JavaScript library.
+
+1.Component based approach
+2.Uses a Declarative approach
+3.DOM updates are handled geacefully
+4.Reusable code
+5.React is designed for speed, speed of implementing the application simplicity and scalability.
+
+React is a popular JavaScript-based library used for building user interfaces with a component-based architecture approach.
+
+Component---------
+------------------
+A component is one of the core building blocks of React.
+
+Prerequisites for React?-------
+-------------------------------
+1.Basic knowledge of HTML, CSS and JavaScript
+2.Basic understanding of ES6 features
+3.Basic understanding of how to use NPM
+
+NPM - Node package manager
+
+node -v
+
+
+
+Install NodeJS and NPM:
+Go to https://nodejs.org/en/
+Download the latest version of NodeJS LTS with Administrator privileges.
+
+Install Visual Studio Code:
+
+Go to https://code.visualstudio.com/
+Downloaded the latest version.
+Run VS Code.
+
+
+To Create React App 
+
+COPY
+npm install -g create-react-app
+If successful, you should be able to get version:
+
+COPY
+create-react-app --version
+Create react project:
+
+COPY
+create-react-app <projectname>
+Run project:
+
+COPY
+cd <projectname>
+npm start
+
+============
+Syntatic sugar form
+
+=============
+Bebel
+Web pack
+render
+
+
+
+JSX- JavaScript Extension/JavaScript XML
+
+Render
+
+React Fragment
+
+JavaScript Expression
+
+Template Literal
+
+
+==========================================================================================
+
+-Let and Const
+Let and const are different ways of creating variables.
+
+==========================================================================================
+
+=> Create server.js and app.js then run command "npm init"
+=> Run command "npm i express mongoose dotenv" to install Express, Mongoose and Dotenv
+=> "npm run dev"
+=> "npm i bcryptjs jsonwebtoken validator nodemailer cookie-parser body-parser" 
+=> "npx create-react-app ."
+=> "npm i axios react-alert react-alert-template-basic react-helmet react-redux redux redux-thunk redux-devtools-extension react-router-dom overlay-navbar"
+=>"npm cache clean --force"
+=>"npm install --legacy-peer-deps"
+=>"npm config set legacy-peer-deps true" - resolve npm override issue
+
+
+4:46:00
+
+Admin
+U: ratan7139@gmail.com
+p:1234567890
+
+****************************
+Node Command
+
+node
+const a=20
+a/20
+.exit
+node ./index.js
+clear
+npm init - This is used to manage all the file in package.json
+npm install express
+npm uninstall express
+
+npm cache clear --force
+
+heroku.com
+ratan.pandey1994@gmail.com
+@#Blackworld1
+
+Call-back function
+Syncronous
+Asyncronous
+Node Path
+Node os
+
+Express
+=======
+npm init
+npm i express
+
+
+24:26
+No Records Found, please check your E-filing processing status by navigating through e-File -> Income Tax Returns -> View Filed Returns
+
+
+Wordpress - 57:12
+
+https://xd.adobe.com/view/9a0859ab-b2cd-4554-a0cb-ce6adb52ab68-cf5b/
+
+
+#1b4633
+
+$randImgArr = ['https://staging.davidwerdiger.com/wp-content/uploads/2023/05/event-images.png','https://staging.davidwerdiger.com/wp-content/uploads/2023/05/event-images-2.png','https://staging.davidwerdiger.com/wp-content/uploads/2023/05/event-images-3.png','https://staging.davidwerdiger.com/wp-content/uploads/2023/05/event-images-4.png'];
+$noImageRandom = $randImgArr[array_rand($randImgArr)];
+
+echo '<a href="' . esc_url( get_permalink() ) . '"><img class="attachment-large size-large skip-lazy wp-post-image auto-height noThumbnail" src="' . $noImageRandom . '"></a>';n 
+
+
+Hoisting
+ES6 Concept
+Promises
+Arrow Function
+Rest and Spread operator
+Git
+https://jsbin.com/
+
+Room No - 1, Makan No 49, Gali Number 4, Near Hanuman Mandir,
+Vill - Teekri, Po - Fazilpur, Gurgaon, 122101
+
+https://webdevproof.com/theme-forest-demo/dental/
+
+
+
+
+******************************************
+=>npx create-react-app demo-app
+=>cd demo-app
+=>npm start
+=>npm i react-router-dom
+npm i react-router-dom@5  
+
+1:07:53
+
+
+
+******************************************
+Protfolio Website
+
+npm create vite@latest
+npm install
+npm run dev
+
+
+https://www.youtube.com/watch?v=cGAdC4A5fF4
+
+**********************************
+==================================
+**********************************
+Thapa Thechnical
+
+----
+npm i -g bun

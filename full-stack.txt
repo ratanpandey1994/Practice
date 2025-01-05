@@ -73,8 +73,8 @@ li li { color:red; }
 h1+p {color:red;}
 
 =>general sibling slector
-h1~P{ color:red; }
 
+h1~P{ color:red; }
 https://www.w3schools.com/css/css_combinators.asp
 
 text-indent: 50% (First line start after 50%)
