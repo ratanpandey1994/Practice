@@ -193,3 +193,10 @@ Thapa Thechnical
 
 ----
 npm i -g bun
+
+Bun is a package manager and its faster then other package manager
+
+bun install
+bun run dev
+bun install react@rc
+bun install react-dom@rc 
