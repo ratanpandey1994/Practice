@@ -247,8 +247,15 @@ var b = -20;
 // We have total 5 falsy values in javaScript
 // ✋ 0,"", undefined,null,NaN, flase** is false anyway
 
-if (score = 0) {
-    console.log("Yay, We won the game 😅");
-} else {
-    console.log("Yay, We loss the game 😟");
-}
+// if (score = 0) {
+//     console.log("Yay, We won the game 😅");
+// } else {
+//     console.log("Yay, We loss the game 😟");
+// }
+
+// 2️⃣ Conditional (Ternary) operator
+// The Conditional (Ternary) operator is the only JavaScript operator that takes three operands
+
+var age = 18;
+console.log((age >= 18) ? "You can vote" : "You can't vote");
+
