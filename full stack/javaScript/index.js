@@ -253,9 +253,16 @@ var b = -20;
 //     console.log("Yay, We loss the game 😟");
 // }
 
+
 // 2️⃣ Conditional (Ternary) operator
 // The Conditional (Ternary) operator is the only JavaScript operator that takes three operands
 
 var age = 18;
 console.log((age >= 18) ? "You can vote" : "You can't vote");
+
+// 3️⃣ Switch Statement
+// Evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case.
+
+// 1st without break statment
+// Find the Area of circle, triangle and rectangle?
 
