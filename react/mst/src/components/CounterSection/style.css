@@ -1,0 +1,85 @@
+.CounterSection {
+    background-color: #f7f7f7;
+}
+
+.CounterSection .SubInnerContent {
+    max-width: 1200px;
+}
+
+.InnerCounter {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+
+.InnerCounter .counter .counter-items {
+    text-align: center;
+}
+
+.InnerCounter .counter .counter-items h3 {
+    color: #3c3c3c;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.InnerCounter .counter .counter-items p {
+    font-size: 18px;
+    color: #3c3c3c;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.InnerBtnSection {
+    max-width: 100%;
+    text-align: center;
+    margin-top: 70px;
+
+}
+
+@media (min-width:767px) {
+    .InnerCounter .counter-items:not(:last-child) {
+        border-right: 1px solid #c0c0c0;
+    }
+}
+
+
+@media (max-width:1199px) {
+    .InnerCounter .counter {
+        gap: 20px;
+    }
+}
+
+@media (max-width:991px) {
+    .InnerCounter .counter .counter-items h3 {
+        font-size: 32px;
+    }
+
+    .InnerCounter .counter {
+        gap: 9px;
+    }
+
+    .InnerCounter .counter .counter-items p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:767px) {
+    .InnerCounter .counter {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .InnerCounter .counter-items {
+        width: calc(100% / 2 - 15px);
+    }
+
+    .InnerCounter .counter .counter-items p {
+        font-size: 12px;
+    }
+
+    .InnerBtnSection {
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,52 @@
+.ServicesImgContentLeft,
+.ServicesImgContentRight {
+    width: 50%;
+    align-items: center;
+}
+
+.ServicesImgContentSection h2 {
+    font-size: 46px;
+    margin-bottom: 20px;
+    color: #3c3c3c;
+}
+
+.ServicesImgContentSection p {
+    margin-top: 15px;
+    line-height: 1.6;
+    color: #6a6a6a;
+}
+
+.ServicesImgContentSection .arrow-btn {
+    margin-top: 40px;
+}
+
+@media screen and (min-width: 1600px) {
+    .ServiceSectionWrap.d-flex.align-center {
+        gap: 28px;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .ServiceSectionWrap.d-flex.align-center {
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .ServicesImgContentSection h2 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .ServicesImgContentLeft,
+    .ServicesImgContentRight {
+        width: 100%;
+    }
+
+    .ServicesImgContentSection h2 {
+        font-size: 26px;
+        margin-bottom: 0;
+    }
+}

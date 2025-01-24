@@ -1,0 +1,108 @@
+.ServiceGrid {
+    margin-top: 65px;
+}
+
+.ServiceGrid ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    border: none;
+}
+
+.ServiceGrid ul li {
+    background-color: #fff;
+    position: relative;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    border-radius: 22px;
+    box-shadow: 0px 7px 40px 7px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+.ServiceGrid h3 {
+    font-size: 24px;
+    color: #3c3c3c;
+}
+
+.ServiceGrid ul li img {
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.CardServiceImg {
+    overflow: hidden;
+    line-height: 0;
+}
+
+.CardServiceImg img {
+    transition: transform 0.3s ease;
+}
+
+.CardServiceImg:hover img {
+    transform: scale(1.1);
+}
+
+.ServiceGrid ul li p {
+    margin-top: 17px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #6a6a6a;
+    line-height: 1.5;
+}
+
+.ServiceCardColumn {
+    text-align: center;
+}
+
+.ServiceCardColumn .btn {
+    margin-top: 70px;
+}
+
+.ServiceCardContent {
+    padding: 35px;
+}
+
+@media (max-width:991px) {
+    .ServiceGrid ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .ServiceCardContent {
+        padding: 15px 25px 35px 25px;
+    }
+
+}
+
+@media (max-width:767px) {
+    .ServiceGrid ul {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .ServiceCardColumn .btn {
+        margin-top: 50px;
+    }
+
+    .ServiceGrid ul li p {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .ServiceCardContent {
+        padding: 20px;
+    }
+
+    .ServiceGrid h3 {
+        font-size: 20px;
+    }
+
+    ul.ClientSlider li {
+        box-shadow: 0 0px 19px rgba(0, 0, 0, 0.04);
+    }
+
+}

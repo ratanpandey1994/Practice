@@ -1,0 +1,118 @@
+.TestimonialsInner .wrapper {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+ul.ClientSlider {
+    padding: 0;
+    list-style: none;
+    margin: 70px auto 0;
+    border-radius: 12px;
+    color: #3c3c3c;
+}
+
+ul.ClientSlider li {
+    list-style: none;
+    background: #ffffff;
+    box-shadow: 7px 5px 40px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    padding: 15px 45px 65px 45px;
+    height: 100%;
+    margin: 50px 40px;
+    text-align: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    height: 54px;
+    width: 54px;
+    border-radius: 100%;
+    background-color: #dcdcdc;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    content: '';
+    background-image: url(/assets/icons/left-arrow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 25px;
+    width: 20px;
+}
+
+.swiper-button-next:after {
+    background-image: url(/assets/icons/right-arrow.png);
+}
+
+ul.ClientSlider li .ClientImg {
+    border-radius: 50%;
+    margin-top: -50px;
+    max-width: 90px;
+}
+
+p.ClientName {
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+p.Destination {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.TesimonialsTitle {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 20px;
+    color: #3c3c3c;
+}
+
+p.TesimonialsContent {
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+img.QuoteImg {
+    margin-top: 20px;
+}
+
+@media (max-width:767px) {
+    ul.ClientSlider li {
+        padding: 15px 15px 45px 15px;
+        margin: 50px 10px 10px 10px;
+    }
+
+    .TesimonialsTitle {
+        font-size: 22px;
+    }
+
+    p.TesimonialsContent {
+        font-size: 18px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        height: 34px;
+        width: 34px;
+    }
+
+    .swiper-button-prev {
+        margin-left: -8px;
+    }
+
+    .swiper-button-next {
+        margin-right: -8px;
+    }
+
+    ul.ClientSlider li .ClientImg {
+        max-width: 70px;
+    }
+}

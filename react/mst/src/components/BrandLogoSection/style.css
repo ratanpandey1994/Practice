@@ -1,0 +1,51 @@
+.LogoSection {
+    padding: 30px 0;
+    background-color: #2e2d30;
+    overflow: hidden;
+}
+
+.logos {
+    justify-content: space-between;
+}
+
+.LogoSection a {
+    list-style: 1;
+}
+
+.logos {
+    gap: 25px;
+}
+
+@media (max-width:991px) {
+    .logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width:767px) {
+    .LogoSection .logos {
+        display: flex !important;
+        flex-grow: 1 !important;
+        flex-wrap: nowrap !important;
+        animation: offer-banner-marquee 5s linear infinite;
+        gap: 30px !important;
+    }
+
+    .LogoSection .logos .BrandLogos {
+        width: 100%;
+        white-space: nowrap;
+        min-width: max-content;
+
+    }
+}
+
+@keyframes offer-banner-marquee {
+    0% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(-100%);
+    }
+}

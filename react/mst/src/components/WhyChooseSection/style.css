@@ -1,0 +1,67 @@
+.WhyChooseColumn {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.ChooseGrid {
+    margin-top: 65px;
+}
+
+.ChooseGrid ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+    border: none;
+}
+
+.ChooseGrid ul li {
+    background-color: #fff;
+    position: relative;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    border-radius: 22px;
+    box-shadow: 0px 7px 40px 7px rgba(0, 0, 0, 0.04);
+    padding: 35px 20px;
+}
+
+.ChooseGrid ul li img {
+    height: 100px;
+    width: 100px;
+}
+
+.ChooseGrid ul li p {
+    margin-top: 17px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #2c2c2c;
+}
+
+.WhyChooseColumn {
+    text-align: center;
+}
+
+.WhyChooseColumn .btn {
+    margin-top: 70px;
+}
+
+@media (max-width:991px) {
+    .ChooseGrid ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+}
+
+@media (max-width:767px) {
+    .ChooseGrid ul {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .WhyChooseColumn .btn {
+        margin-top: 50px;
+    }
+
+}

@@ -1,0 +1,72 @@
+.InnerBanner {
+    align-items: center;
+    background-position: 65%;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 215px 0 160px 0;
+    position: relative;
+
+}
+
+.InnerBanner:before {
+    background-image: linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%));
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.InnerBanner .InnerContent {
+    max-width: 960px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.InnerBanner h1 {
+    color: #fff;
+    line-height: 1.1;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.InnerBanner p {
+    font-weight: 500;
+    font-size: 22px;
+    font-style: italic;
+    color: #fff;
+    margin-top: 10px;
+    line-height: 1.3;
+}
+
+@media (min-width:768px) {
+    .InnerBanner h1 {
+        font-size: 60px;
+    }
+}
+
+@media (max-width:991px) {
+    .InnerBanner {
+        padding: 160px 0 140px 0;
+    }
+}
+
+@media (max-width:767px) {
+    .InnerBanner p {
+        font-size: 18px;
+    }
+
+    .InnerBanner {
+        padding: 150px 0 60px 0;
+    }
+
+    .HeroContent a.btn.ylw-btn {
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,34 @@
+.GallarySectionInner{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.GallarySectionInner a img {
+    width: 100%;
+    height:300px;
+    object-fit: cover;
+}
+
+.GallarySectionInner a {
+    overflow: hidden;
+    line-height:0;
+}
+
+.GallarySectionInner img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width:991px) {
+.GallarySectionInner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+}
+
+
+@media (max-width:991px) {
+    .GallarySectionInner {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}

@@ -1,0 +1,139 @@
+.ContactSection .InnerBanner{
+padding-bottom:355px;
+}
+
+.ContactForm {
+text-align: center;
+padding: 40px 20px;
+}
+
+.ContactForm .ContactFormWrapper {
+max-width: 980px;
+margin-top: -317px;
+background: #f4f4f4;
+margin-left: auto;
+margin-right: auto;
+padding: 75px 120px;
+border-radius:30px;
+box-shadow: 0px 7px 40px 7px rgba(0, 0, 0, 0.04);
+}
+
+.formHeader p {
+font-size: 24px;
+color: #666;
+font-style: italic;
+line-height:1.5;
+}
+.ContactFormWrapper form {
+display: flex;
+flex-wrap: wrap;
+gap: 45px;
+justify-content: space-between;
+margin-top:45px;
+}
+
+.ContactForm .formField {
+position: relative;
+width: 100%;
+}
+
+.ContactForm .w50 {
+width: calc(100% / 2 - 4%);
+}
+
+.ContactForm .wfull {
+width: 100%;
+}
+
+.ContactForm .text-right {
+text-align: right;
+}
+
+.formField.w50.text-left {
+text-align: left;
+}
+.ContactForm label {
+display: block;
+font-size: 14px;
+color: #ff7f00;
+margin-bottom: 5px;
+text-align: left;
+}
+
+.ContactForm input,
+.ContactForm textarea {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border: none;
+border-bottom: 2px solid #c0c0c0;
+outline: none;
+background: none;
+transition: #c0c0c0 0.3s ease;
+}
+
+.ContactForm input, .ContactForm textarea {
+width: 100%;
+padding: 10px 15px;
+font-size: 16px;
+border: none;
+border-bottom: 2px solid #c0c0c0;
+outline: none;
+background: none;
+font-family: 'Inter';
+transition: #f68620 0.3s ease;
+}
+
+.ContactForm input:focus::placeholder,
+.ContactForm textarea:focus::placeholder {
+color: #f68620;
+font-style: normal;
+}
+
+
+.ContactForm input:focus,
+.ContactForm textarea:focus {
+border-bottom: 2px solid #ff7f00;
+}
+
+.ContactForm textarea {
+height: 110px;
+resize: none;
+}
+
+.formField.w50.text-left {
+text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+.ContactForm .w50 {
+width: 100%;
+}
+
+.ContactFormWrapper form {
+gap: 15px;
+}
+
+.formHeader p {
+font-size: 16px;
+}
+
+.ContactForm button {
+width: 100%;
+}
+}
+
+@media screen and (max-width: 480px) {
+.ContactForm {
+padding: 20px 0px;
+}
+
+.formHeader p {
+font-size: 14px;
+}
+
+.ContactForm input,
+.ContactForm textarea {
+font-size: 14px;
+}
+}

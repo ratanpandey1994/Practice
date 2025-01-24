@@ -1,0 +1,74 @@
+.AccordionSection .wrapper {
+    max-width: 980px;
+}
+
+.AccordionWrapper {
+    max-width: 950px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.accordionHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.AccordionSection .SubInnerContent {
+    margin-bottom: 30px;
+}
+
+.accordionMain {
+    border: none;
+    border-bottom: 1px solid #d7d7d7;
+    margin-bottom: 0 !important;
+    padding: 25px 0;
+}
+
+.accordionMain:first-child {
+    margin-top: 30px;
+}
+
+.accordionMain h5 {
+    font-weight: 600;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.accordionMain.active h5 {
+    color: #ff8600 !important;
+}
+
+.accordionMain p {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-right: 50px;
+    line-height: 1.7;
+    color: #3c3c3c;
+    cursor: pointer;
+}
+
+button.accordionToggle {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+@media (max-width:767px) {
+    .accordionMain h5 {
+        font-size: 18px;
+    }
+
+    .accordionMain p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .accordionMain p {
+        padding-right: 16px;
+    }
+
+    .AccordionSection .SubInnerContent {
+        margin-bottom: 0;
+    }
+}

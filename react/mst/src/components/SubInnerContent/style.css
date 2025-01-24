@@ -1,0 +1,37 @@
+.SubInnerContent{
+    max-width:1050px;
+    margin:0 auto;
+}
+.SubInnerContent h2{
+    font-size:56px;
+    text-align: center;
+    font-weight:700;
+    color:#3c3c3c;
+}
+
+.SubInnerContent p{
+    font-size:22px;
+    color:#6a6a6a;
+    margin-top:22px;
+    line-height:38px;
+    text-align: center;
+    margin-top: 8px;
+}
+@media (max-width:991px) {
+    .SubInnerContent h2 {
+        font-size: 42px;
+      }
+      .SubInnerContent p {
+        font-size: 22px;
+        line-height: 32px;
+    }
+}
+@media (max-width:767px) {
+    .SubInnerContent h2 {
+      font-size: 30px;
+    }
+    .SubInnerContent p {
+        font-size: 18px;
+        line-height: 27px;
+      }
+  }

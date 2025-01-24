@@ -217,6 +217,7 @@ npm i bootstrap@v4.1.3
 npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/material @mui/styled-engine-sc styled-components
 npm i axios
+npm install react-slick --save
 
 
 API key: 35d1c791a19349ee8b525f0fcf7f2faf

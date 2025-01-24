@@ -1,0 +1,61 @@
+.TitleWithBorder p {
+position: relative;
+text-align: center;
+font-size:32px;
+font-weight:700;
+margin: 30px 0;
+color:#3c3c3c;
+}
+
+.TitleWithBorder{
+max-width:770px;
+margin:0 auto;
+
+}
+.TitleWithBorder p::before,
+.TitleWithBorder p::after {
+content: "";
+position: absolute;
+top: 50%;
+width: 17%;
+height: 2px;
+background-color: #b9b9b9;
+}
+
+.TitleWithBorder p::before {
+left: 0;
+}
+
+.TitleWithBorder p::after {
+right: 0;
+}
+
+@media (max-width:991px) {
+.TitleWithBorder p::before, .TitleWithBorder p::after {
+  width: 14%;
+}
+.TitleWithBorder p {
+font-size: 28px;
+}
+}
+
+@media (max-width:767px) {
+.TitleWithBorder p {
+  font-size: 22px;
+}
+
+.TitleWithBorder p::before, .TitleWithBorder p::after {
+width: 20%;
+}
+.ServiceGrid {
+margin-top: 35px;
+}
+}
+@media (max-width:575px) {
+.TitleWithBorder p::before, .TitleWithBorder p::after {
+  width: 9%;
+}
+.TitleWithBorder p {
+  font-size:19px;
+}
+}

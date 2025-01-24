@@ -1,0 +1,69 @@
+.ServicesContentSection .ServicesContent {
+    max-width: 720px;
+    position: relative;
+    color: #fff;
+}
+
+.ServicesContentSection .ServicesContent h2 {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.ServicesContentSection .ServicesContent p {
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.ServicesContentSection .ServicesContent .arrow-btn {
+    margin-top: 40px;
+}
+
+.ServicesContentSection.ptb200.leading-company {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ServicesContentSection.ptb200.leading-company a.btn.arrow-btn {
+    font-weight: 500;
+    padding: 14px 20px 14px 20px;
+}
+
+.ServicesContentSection.ptb200.leading-company a.btn.arrow-btn {
+    text-transform: uppercase;
+    background-color: #f68620;
+    color: #fff;
+}
+
+.ServicesContentSection.ptb200.leading-company a.btn.arrow-btn:hover {
+    color: #f68620;
+    background-color: transparent;
+}
+
+.ServicesContentSection.ptb200.leading-company a.btn.arrow-btn::after {
+    content: none;
+}
+
+@media screen and (max-width:991px) {
+    .ServicesContentSection .ServicesContent h2 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .ServiceSectionWrap.d-flex.align-center {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .ServicesContentSection .ServicesContent h2 {
+        font-size: 26px;
+    }
+
+    .ServicesContentSection.ptb200.leading-company {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+}

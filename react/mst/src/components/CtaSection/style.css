@@ -1,0 +1,73 @@
+.CtaSection {
+    align-items: center;
+    background-position: 65%;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.CtaSection:before {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, .9), transparent);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.CtaSection .CtaContent {
+    max-width: 575px;
+    position: relative;
+}
+
+.CtaSection h3.save-on {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 2px dashed #fff38c;
+    display: inline-block;
+    padding: 10px 20px;
+    font-style: normal;
+    color: #fff38c;
+}
+
+.CtaSection h2 {
+    color: #fff;
+    line-height: 1.1;
+    font-size: 68px;
+    margin-top: 20px;
+}
+
+.CtaSection p {
+    font-weight: 500;
+    font-size: 24px;
+    font-style: italic;
+    color: #fff;
+    margin-top: 10px;
+    line-height: 1.3;
+}
+
+.CtaContent a.btn.ylw-btn {
+    margin-top: 50px;
+}
+
+@media (max-width:991px) {
+    .CtaSection h2 {
+        font-size: 32px;
+
+    }
+
+    .CtaSection p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:767px) {
+    .CtaContent a.btn.ylw-btn {
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,91 @@
+.footer-main {
+  background-color: #11263b;
+}
+
+.footer-main.ptb100 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.SocialLinks {
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.footerLogo {
+  text-align: center;
+}
+
+.MenuLinks {
+  margin-top: 25px;
+}
+
+.MenuLinks a {
+  padding-right: 25px;
+  padding-left: 25px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.MenuLinks .FooterMenu:not(:last-child) {
+  border-right: 1px solid #fff;
+  line-height: 16px;
+  margin: 5px 0;
+}
+
+.ServiceLinks {
+  margin-top: 30px;
+}
+
+.ServiceLinks a {
+  color: #b4c1d5;
+  margin: 15px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.ServiceLinks {
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.CopyRight {
+  margin-top: 29px;
+  color: #b4c1d5;
+  font-size: 14px;
+}
+
+@media (max-width:767px) {
+  .MenuLinks a {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .MenuLinks a {
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 12px;
+  }
+
+  .ServiceLinks a {
+    margin: 5px;
+    font-size: 12px;
+  }
+
+  .CopyRight {
+    font-size: 12px;
+  }
+
+  .footer-main.ptb100 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .SocialLinksImg img {
+    max-width: 30px;
+  }
+}

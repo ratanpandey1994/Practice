@@ -2,25 +2,37 @@ import { IoIosMenu } from "react-icons/io";
 import Button from '@mui/material/Button';
 import { FaAngleDown } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FaAngleRight } from "react-icons/fa6";
+
 
 
 const Navigation = () => {
+
+    const [isOpenSidebarVal, setisOpenSidebarVal] = useState(false);
+
     return (
         <nav>
             <div className='container'>
                 <div className='row'>
                     <div className='col-sm-3 navPart1'>
                         <div className="catWrapper">
-                            <Button className='allCatTab align-items-center'>
+                            <Button className='allCatTab align-items-center' onClick={() => setisOpenSidebarVal(!isOpenSidebarVal)}>
                                 <span className="icon1 me-2"><IoIosMenu /></span>
                                 <span className='text'>All Categories</span>
                                 <span className="icon2 ms-2"><FaAngleDown /></span>
                             </Button>
 
-                            <div className="sidebarNav">
+                            <div className={`sidebarNav ${isOpenSidebarVal === true ? 'open' : ''}`}>
                                 <div className='submenu'>
-                                    <ul className="ps-0">
-                                        <li><Link to='/'><Button>Men</Button></Link></li>
+                                    <ul className="ps-0 mb-0">
+                                        <li><Link to='/'><Button>Men <FaAngleRight className="ms-auto" /></Button></Link>
+                                            <div className='submenu'>
+                                                <Link to='/'><Button>Clothing</Button></Link>
+                                                <Link to='/'><Button>Footwear</Button></Link>
+                                                <Link to='/'><Button>Watches</Button></Link>
+                                            </div>
+                                        </li>
                                         <li><Link to='/'><Button>Women</Button></Link></li>
                                         <li><Link to='/'><Button>Beauty</Button></Link></li>
                                         <li><Link to='/'><Button>Watches</Button></Link></li>

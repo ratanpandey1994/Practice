@@ -5,6 +5,9 @@ import Header from "./Componentns/Header";
 import Home from "./Pages/Home";
 import { createContext, useEffect, useState } from "react";
 import axios from 'axios';
+// Import css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const MyContext = createContext();
 
@@ -22,7 +25,7 @@ function App() {
     const response = await axios.get(url);
     // Set the country list directly from the data array
     setCountryList(response.data.data);
-    console.log(response.data.data);
+    //console.log(response.data.data);
 
   };
 
