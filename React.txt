@@ -218,9 +218,20 @@ npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/material @mui/styled-engine-sc styled-components
 npm i axios
 npm install react-slick --save
+npm install swiper
 
 
 API key: 35d1c791a19349ee8b525f0fcf7f2faf
 https://newsapi.org/docs/get-started
 https://countriesnow.space/
 https://countriesnow.space/api/v0.1/countries/
+
+
+
+
+https://69.167.138.166:2083
+
+
+user: rawanddigital
+
+P: RAWysrdY&tTF%*@)!tal
