@@ -3,3 +3,38 @@ My name is Ratan Pandey. I have been working at OG Web Solutions Private Limited
 I have worked with HTML, CSS, JavaScript, React, and jQuery. I have also used various website builders like ClickFunnels (all versions), GoHighLevel, and Webflow. Additionally, I have customized websites in these builders, including automation, courses, and other features.
 
 That's a little about me!
+
+*************************
+Q. Why do we use "DOCTYPE" in HTML?
+A. "DOCTYPE" is used to tell the browser which version of HTML we are using.
+
+*************************
+
+Q. What is the use of the <head> tag?
+A. The <head> tag stores important information about the webpage, like the title, meta details, styles, and scripts.
+
+*************************
+
+Q.What is the difference between the defer and async attributes in JavaScript linking on a webpage?
+
+A.
+async loads the script while the page is loading and runs it immediately.
+defer loads the script while the page is loading but runs it only after the HTML is fully loaded.
+
+Best Practice: For most websites, defer is recommended because it ensures scripts execute in the correct order without blocking page rendering. 
+
+*************************
+
+Q. Can I create custom tags like <demo>? If yes, how does the browser handle them? Do they behave like <span> or <div>?
+A. Yes, you can create custom tags like <demo>, but browsers don’t give them any special meaning. By default, they behave like inline elements (similar to <span>).
+
+*************************
+
+Q. What is the difference between block-level and inline-level elements?
+
+A.
+
+Block-level elements take up the full width and start on a new line (e.g., <div>, <p>, <h1>).
+Inline elements take up only the space they need and stay in the same line (e.g., <span>, <a>, <strong>).
+
+In inline-level elements, the top and bottom padding won’t work properly but the content does not move; instead, the height increases, and margins also won’t work as expected.
