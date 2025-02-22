@@ -1,0 +1,5 @@
+My name is Ratan Pandey. I have been working at OG Web Solutions Private Limited for more than 2.5 years, and my total experience in frontend development is over 5 years.
+
+I have worked with HTML, CSS, JavaScript, React, and jQuery. I have also used various website builders like ClickFunnels (all versions), GoHighLevel, and Webflow. Additionally, I have customized websites in these builders, including automation, courses, and other features.
+
+That's a little about me!
