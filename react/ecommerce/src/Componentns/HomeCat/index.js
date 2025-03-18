@@ -56,7 +56,6 @@ const HomeCat = () => {
                         })
                     }
 
-
                 </Swiper>
             </div>
         </section>

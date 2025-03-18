@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .error {
+            display: none;
+            color: red;
+            margin-bottom: 20px;
+            line-height: 1;
+            font-size: 15px;
+        }
+
+        input[type="button"] {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 p-6">
+    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow">
+        <form>
+            <h2 class="text-xl font-bold mb-4">User Form</h2>
+            <input type="text" id="name" name="name" placeholder="Name" class="mb-2 w-full p-2 border rounded"
+                required />
+            <p class="error" id="nameError"></p>
+            <input type="email" id="email" name="email" placeholder="Email" class="mb-2 w-full p-2 border rounded"
+                required />
+            <p class="error" id="emailError"></p>
+            <input onclick="addData()" type="button" value="Add User" class="px-4 py-2 bg-blue-500 text-white rounded">
+        </form>
+    </div>
+    <div class="max-w-xl mx-auto mt-6">
+        <table class="w-full border-collapse border border-gray-300" id="crudTable">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="border p-2">Name</th>
+                    <th class="border p-2">Email</th>
+                    <th class="border p-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
