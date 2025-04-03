@@ -8,6 +8,7 @@ import axios from 'axios';
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Footer from "./Componentns/Footer";
 
 const MyContext = createContext();
 
@@ -41,6 +42,8 @@ function App() {
         <Routes>
           <Route path="/" exact={true} element={<Home />} />
         </Routes>
+
+        <Footer />
       </MyContext.Provider>
     </BrowserRouter>
   );

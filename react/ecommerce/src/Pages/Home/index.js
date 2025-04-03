@@ -132,7 +132,7 @@ const Home = () => {
 
                             <form>
                                 <IoMailOutline />
-                                <input type="text" />
+                                <input type="text" placeholder="Your Email Address" />
                                 <Button>Subscribe</Button>
                             </form>
 
@@ -143,6 +143,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
         </>
     )
 }
