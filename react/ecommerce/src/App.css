@@ -23,6 +23,45 @@ body {
   }
 }
 
+.badge {
+  display: inline-block;
+  padding: 7px 10px;
+}
+
+.badge.bg-success {
+  background-color: #e5f8ed !important;
+  color: #16b858;
+}
+
+button {
+  text-transform: capitalize;
+}
+
+.btn-small {
+  font-size: 12px !important;
+  color: #000 !important;
+  text-transform: capitalize !important;
+}
+
+.btn-small svg {
+  font-size: 20px;
+}
+
+.btn-blue {
+  background-color: #6d4aae !important;
+  color: #fff !important;
+  text-transform: capitalize;
+}
+
+.btn-big {
+  font-size: 15px !important;
+  padding: 7px 30px !important;
+}
+
+.btn-round {
+  border-radius: 30px !important;
+}
+
 .cursor {
   cursor: pointer;
 }
@@ -53,7 +92,7 @@ body {
 }
 
 .bg-blue {
-  background-color: #233a95;
+  background-color: #6d4aae;
 }
 
 .headerWrapper .top-strip {
@@ -98,7 +137,7 @@ body {
 .headerWrapper .header .part2 .countryDrop .name {
   font-size: 14px !important;
   text-transform: capitalize !important;
-  color: #233a95 !important;
+  color: #6d4aae !important;
   font-weight: 700;
   line-height: 16px;
 }
@@ -329,13 +368,13 @@ nav .navPart1 .catWrapper .sidebarNav ul li:hover .submenu button {
 }
 
 nav .allCatTab {
-  background-color: #2bbef9;
+  background-color: #6d4aae;
   padding: 10px 15px;
   border-radius: 30px;
 }
 
 nav .allCatTab:hover {
-  background-color: #2bbef9;
+  background-color: #6d4aae;
 }
 
 nav .allCatTab * {
@@ -383,7 +422,7 @@ nav .navPart2 ul li a button {
 
 nav .navPart2 ul li a:hover {
   background-color: #f0faff;
-  color: #2bbef9;
+  color: #6d4aae;
 }
 
 nav .navPart2 ul li {
@@ -574,7 +613,7 @@ nav .navPart2 ul li:hover .submenu {
 }
 
 .text-bg-primary {
-  background-color: #2bbef9 !important;
+  background-color: #6d4aae !important;
 }
 
 .productItem .info {
@@ -586,16 +625,21 @@ nav .navPart2 ul li:hover .submenu {
   font-weight: 600;
 }
 
-.productItem .info .oldPrice {
+.info .oldPrice {
   font-size: 16px;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.2);
   text-decoration: line-through;
 }
 
-.productItem .info .netPrice {
+.info .netPrice {
   font-size: 16px;
   font-weight: bold;
+}
+
+.info .oldPrice.lg,
+.info .netPrice.lg {
+  font-size: 20px;
 }
 
 .productItem .actions {
@@ -632,7 +676,7 @@ nav .navPart2 ul li:hover .submenu {
 }
 
 .productItem .actions button:hover {
-  background-color: #233a95;
+  background-color: #6d4aae;
 }
 
 .productItem .actions button:hover svg {
@@ -729,7 +773,7 @@ nav .navPart2 ul li:hover .submenu {
 .newsLetterSection {
   width: 100%;
   height: auto;
-  background-color: #233a95;
+  background-color: #6d4aae;
   position: relative;
   overflow: hidden;
   padding: 70px 0;
@@ -793,7 +837,7 @@ nav .navPart2 ul li:hover .submenu {
   position: absolute;
   top: 6px;
   right: 7px;
-  background-color: #233a95 !important;
+  background-color: #6d4aae !important;
   font-size: 14px !important;
   padding: 12px 25px !important;
   color: #fff !important;
@@ -870,7 +914,7 @@ footer .copyright ul li a svg {
 }
 
 footer .copyright ul li a:hover {
-  background-color: #2bbef9;
+  background-color: #6d4aae;
 }
 
 footer .copyright ul li a:hover svg {
@@ -902,7 +946,11 @@ footer .copyright ul li a:hover svg {
   left: 20px;
   position: absolute;
   top: 20px;
-  z-index: 100
+  z-index: 100;
+}
+
+.badge-primary {
+  background: #6d4aae !important;
 }
 
 .zoomSliderBig {
@@ -963,4 +1011,135 @@ footer .copyright ul li a:hover svg {
 
 .zoomSlider .swiper-slide .item_active {
   opacity: 1 !important
+}
+
+.quantityDrop {
+  width: 150px;
+  gap: 10px;
+}
+
+.quantityDrop button {
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background-color: #edeef5 !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #000;
+}
+
+.quantityDrop button svg {
+  color: #000;
+}
+
+.quantityDrop input {
+  width: 20px;
+  border: 0px;
+  background-color: transparent;
+  outline: none !important;
+  text-align: center;
+}
+
+.productModal .actions button {
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  font-size: 10px !important;
+}
+
+.productModal .actions button svg {
+  font-size: 15px !important;
+}
+
+/* Listin Page */
+.product_Listing_page {
+  padding: 45px 0;
+}
+
+.product_Listing_page .productListing {
+  gap: 20px;
+}
+
+.product_Listing_page .productListing .sidebar {
+  width: 20%;
+  flex: 0 0 20%;
+}
+
+.product_Listing_page .productListing .content_right {
+  width: 80%;
+  flex: 0 0 80%;
+  padding-left: 35px;
+}
+
+.product_Listing_page .productListing .sidebar .filterBox {
+  margin-bottom: 35px;
+}
+
+
+.product_Listing_page .productListing .sidebar .filterBox h6 {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.product_Listing_page .productListing .sidebar .filterBox .scroll {
+  max-height: 170px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.css-imrjgg-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+  color: #6d4aae !important;
+}
+
+.product_Listing_page .productListing .sidebar .filterBox .scroll::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+
+.product_Listing_page .productListing .sidebar .filterBox .scroll ul {
+  padding-left: 7px;
+}
+
+.product_Listing_page .productListing .sidebar .filterBox .scroll ul li {
+  list-style: none;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.product_Listing_page .productListing .sidebar .filterBox .scroll ul li .MuiCheckbox-root {
+  padding: 2px !important;
+}
+
+.product_Listing_page .productListing .sidebar .filterBox .scroll ul li .MuiTypography-root {
+  font-size: 13px !important;
+}
+
+.product_Listing_page .productListing .sidebar .filterBox .scroll ul li svg {
+  height: 20px;
+  width: 20px;
+}
+
+.range-slider .range-slider__thumb,
+.range-slider .range-slider__range {
+  background-color: #6d4aae !important;
+}
+
+.range-slider .range-slider__thumb {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.range-slider {
+  height: 5px !important;
+}
+
+.borderRadius8 {
+  border-radius: 8px;
+}
+
+.showBy {
+  width: 100%;
+  height: 50px;
+  background-color: #f7f8fd;
 }

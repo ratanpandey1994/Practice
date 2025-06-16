@@ -1,0 +1,8 @@
+Photoshop - increase resololution
+ctl+alt = resolution -500
+ctl+J = Copy layer
+filter -> sharpen - unsharp mask
+other -> High pass...
+overlay
+
+ 
