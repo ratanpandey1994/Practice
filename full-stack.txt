@@ -234,5 +234,17 @@ React Mi Store Clone
 
 -npx create-react-app .
 
+========
+Win + R
+%temp%
+temp
+prefetch
+cleanmgr
+shell:RecycleBinFolder
+services.msc
+C:\Windows\SoftwareDistribution\Download
+
+Command Prompt
+ipconfig /flushdns
 
 

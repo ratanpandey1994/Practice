@@ -230,3 +230,24 @@ https://countriesnow.space/api/v0.1/countries/
 
 IDFC
 1113100987
+
+=========
+Great Stack
+React eCommerce
+
+- npm create vite@latest
+- cd frontend
+- npm install
+- npm install react-router-dom
+- npm i react-toastify
+- npm run dev
+- rafce
+- npm i react-toastify
+
+
+
+
+
+
+======
+https://www.freecodecamp.org/news/an-animated-introduction-to-web-development-from-back-to-front/?ref=dailydev
